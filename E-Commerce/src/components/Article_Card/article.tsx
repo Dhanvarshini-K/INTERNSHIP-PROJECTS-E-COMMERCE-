@@ -2,6 +2,8 @@ import React from "react";
 import "../Article_Card/article.css";
 import { ArticleItem } from "./article_card";
 import arrow_right_icon from "../../assets/icons/arrow_right_icon.svg";
+import { Link } from "react-router-dom";
+
 const ArticleMain = () => {
 
     const RenderArticle = ArticleItem.filter((article) => {
@@ -28,7 +30,7 @@ const ArticleMain = () => {
                 <div className="articles_container container d-flex justify-content-between pt-4 align-items-center">
                     <span className="h3 fw-bold">Articles</span>
                     <div className="link d-flex align-items-center">
-                        <a href="#" className="fw-medium text-decoration-none  border-bottom border-dark text-dark">MoreArticles</a>
+                        <Link to="/blog" className="fw-medium text-decoration-none  border-bottom border-dark text-dark">MoreArticles</Link>
                         <img src={arrow_right_icon} alt="arrow_right" />
                     </div>
                 </div>

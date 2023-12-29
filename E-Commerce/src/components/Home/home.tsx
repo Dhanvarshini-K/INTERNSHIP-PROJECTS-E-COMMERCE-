@@ -4,6 +4,7 @@ import livingroom_image from "../../assets/images/livingroom_image.svg"
 import bedroom_images from "../../assets/images/bedroom_images.svg";
 import kitchen_images from "../../assets/images/kitchen_images.svg";
 import arrow_right_icon from "../../assets/icons/arrow_right_icon.svg";
+import { Link } from "react-router-dom";
 
 
 const HomePageMain = () => {
@@ -65,11 +66,10 @@ const HomePageMain = () => {
                     <span className="h3 fw-bold">Arrivals</span>
                 </div>
                 <div className="link d-flex align-items-center border-bottom border-dark">
-                    <a href="#" className="fw-medium text-decoration-none text-dark">MoreProducts</a>
+                    <Link to="/shop" className="fw-medium text-decoration-none text-dark">MoreProducts</Link>
                     <img src={arrow_right_icon} alt="arrow_right" />
                 </div>
             </section>
-
 
 
 

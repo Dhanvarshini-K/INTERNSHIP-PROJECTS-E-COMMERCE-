@@ -4,3 +4,10 @@
 .review_image{
     width: 70px;
 }
+.product_category{
+    position: relative;
+}
+.add_to_cart{
+    position: absolute;
+    top: 250px;
+}

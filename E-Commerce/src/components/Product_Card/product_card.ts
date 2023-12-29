@@ -11,6 +11,18 @@ import lamp from "../../assets/images/lamp_image.svg";
 import basket from "../../assets/images/basket_image.svg";
 import white_pillow from "../../assets/images/off_white_pillow_image.svg";
 import star from "../../assets/icons/star_icons.svg";
+
+
+interface productList {
+    id: number,
+    image:String,
+    discount_title: String,
+    discount_percent: String,
+    product_reviews:String ,
+    product_title: String,
+    actual_price: String,
+    discount_price: String
+}
 export const productList = [
     {
         id: 1,
