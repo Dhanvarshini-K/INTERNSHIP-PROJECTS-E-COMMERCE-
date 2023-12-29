@@ -1,0 +1,19 @@
+
+.hide_password{
+    width: 17px;
+    height: 21px;
+}
+.form_image{
+    background-image: url(../../assets//images/signin_images.svg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+.signin_image{
+    height: 90vh;
+     width: 100%;
+}
+.signin_container{
+    width: 100%;
+}
+
+

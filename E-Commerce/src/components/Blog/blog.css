@@ -1,0 +1,11 @@
+.blog_image{
+  background-image: url(../../assets//images/blog_image.svg);
+  background-size: cover;
+  height: 70vh;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}

@@ -1,0 +1,17 @@
+.product{
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+}
+::-webkit-scrollbar {
+    width: 1px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--WhiteSmoke);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:var(--DarkGrey); 
+    border-radius: 6px;
+}

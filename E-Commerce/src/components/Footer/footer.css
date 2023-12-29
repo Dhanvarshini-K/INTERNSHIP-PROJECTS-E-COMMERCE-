@@ -1,0 +1,18 @@
+.newsletter_container{
+    background-image: url(../../assets/images/newsletter_image.svg);
+    background-size: cover;
+    height: 40vh;
+}
+.email>input,
+.email>button{
+    background-color: var(--light);
+}
+@media(max-width:570px){
+    .newsletter_container > img{
+        display: none;
+    }
+    .newsletter_content{
+        background-color: var(--light);
+        height: 40vh;
+    }
+  }

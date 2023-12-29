@@ -1,0 +1,38 @@
+.shop_bg_image{
+    width: 100%;
+}
+.categories_list{
+    height: 230px;
+}
+.form-check-inline{
+    width: 170px;
+}
+.category_title{
+    height: 30px;
+}
+.down_arrow{
+    width: 10px;
+}
+.shop_bg_image{
+    background-image: url(../../assets/images/shop_bg_image.svg);
+    background-size: cover;
+    height: 70vh;
+}
+
+.categories_list{
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+}
+::-webkit-scrollbar {
+    width: 3px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(75, 74, 74); 
+    border-radius: 6px;
+}
