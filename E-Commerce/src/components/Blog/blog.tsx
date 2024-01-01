@@ -10,7 +10,7 @@ import first_page_fourth_icon from "../../assets/icons/first_page_fourth_icon.sv
 import ArticleList from "../Article_Card/articleList";
 
 const BlogMain = () => {
-    const[showMore ,setShowMore] = useState<Boolean>(false);
+    const [showMore, setShowMore] = useState<Boolean>(false);
     const viewReducer = (state: any, action: any) => {
         switch (action.type) {
             case 'THREE':
@@ -43,16 +43,21 @@ const BlogMain = () => {
             </section>
 
             <section className="container d-flex justify-content-between p-3">
-                <div className=" d-flex gap-4">
+                <div className=" d-flex d-none d-md-block">
                     <a href="#" className="text-dark fw-bold ">All Blog</a>
-                    <a href="#" className="fw-bold text-decoration-none text-secondary">Featured</a>
+                    <a href="#" className="fw-bold text-decoration-none text-secondary ps-4">Featured</a>
                 </div>
-                <div className="d-flex gap-5">
+
+
+                <div className="sort_container d-md-flex d-none d-md-block">
+
                     <div className="d-flex gap-2 align-items-baseline">
                         <p className="text-center fs-5">Sort by</p>
                         <img src={down_arrow} alt="down_arrow" />
                     </div>
-                    <div className="d-flex">
+
+
+                    <div className="d-flex ps-3">
                         <button onClick={() => dispatch({ type: 'THREE' })} className="border-1">
                             <img src={first_page_first_icon} alt="first_page_icon" />
                         </button>
@@ -66,15 +71,24 @@ const BlogMain = () => {
                             <img src={first_page_fourth_icon} alt="first_page_icon" />
                         </button>
                     </div>
+
                 </div>
+                <div className="d-sm-block d-md-none ">
+                    <select className="select_conainer p-2 shadow-none  border-2 rounded" >
+                        <option>
+                                All Blogs
+                        </option>
+                    </select>
+                </div>
+
             </section>
 
 
             <ArticleList view={gridView} addArticle={showMore} />
 
             <div className="p-4 d-flex justify-content-center">
-                {showMore ? (<button onClick= {()=>setShowMore(false)} className="btn shadow-none bg-white btn-rounded border-dark" >Show Less</button>) :
-                   <button onClick= {()=>setShowMore(true)} className="btn shadow-none bg-white btn-rounded border-dark">Show More</button> }    
+                {showMore ? (<button onClick={() => setShowMore(false)} className="btn shadow-none bg-white btn-rounded border-dark" >Show Less</button>) :
+                    <button onClick={() => setShowMore(true)} className="btn shadow-none bg-white btn-rounded border-dark">Show More</button>}
             </div>
 
 
