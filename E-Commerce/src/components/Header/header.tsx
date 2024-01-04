@@ -31,12 +31,13 @@ const Header = () => {
                 </div>
             </section>
 
+
             <nav className="navbar navbar-expand-md">
                 <div className="container">
                     <div>
                         <button className="navbar-toggler border-0  shadow-none" type="button"
                             data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar"
+                            data-bs-target="#offcanvasNavbar" 
                             aria-controls="offcanvasNavbar"
                             aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -45,14 +46,16 @@ const Header = () => {
                     </div>
                     <div className="d-flex gap-3 order-md-3">
                         <img src={search_icon} alt="search_icon" id="sub_header_icons" className="d-none d-md-block img-fluid" />
+                        <Link to="/account">
                         <img src={account_icon} alt="account_icon" id="sub_header_icons" className="d-none d-md-block img-fluid" />
-                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" className="d-flex text-decoration-none">
+                        </Link>
+                        <Link to="/cart" className="d-flex text-decoration-none">
                             <img src={cart_icon} alt="account_icon" id="sub_header_icons" className="img-fluid" />
                             <div className="bg-dark text-white fw-medium px-2 pb-1 rounded-circle text-center">0</div>
-                        </a>
+                        </Link>
                     </div>
 
-                    <div className="hamburger_container offcanvas offcanvas-start w-auto bg-body-tertiary"  id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div className="hamburger_container offcanvas offcanvas-start w-auto bg-body-tertiary" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div>
                             <div className="offcanvas-header">
                                 <div className="d-flex flex-column gap-1 justify-content-center">
@@ -65,7 +68,7 @@ const Header = () => {
                                     <div className="form-group has-search">
                                         <span className="fa fa-search form-control-feedback"></span>
                                         <button className="border-0 bg-body-tertiary">
-                                            <input type="text" className="form-control shadow-none pl-3" placeholder="Search"  />
+                                            <input type="text" className="form-control shadow-none pl-3" placeholder="Search" />
                                         </button>
                                     </div>
                                 </div>
@@ -77,7 +80,7 @@ const Header = () => {
                                 <div className="offcanvas-body  d-flex justify-content-sm-start justify-content-md-center ">
                                     <ul className="navbar-nav justify-content-start flex-grow-3 fs-6 fw-medium">
                                         <li className="nav-item">
-                                            <Link  to="/home" className="nav-link active fw-bold" aria-current="page">Home</Link>
+                                            <Link to="/home" className="nav-link active fw-bold" aria-current="page">Home</Link>
                                         </li>
                                         <div className="vertical_line d-md-none d-sm-block border-1  border-bottom"></div>
                                         <li className="nav-item">
@@ -125,3 +128,5 @@ const Header = () => {
     )
 }
 export default Header;
+
+//d-none d-sm-block

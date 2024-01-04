@@ -126,6 +126,7 @@ export const productList = [
         product_reviews: `${star}`,
         product_title: "Bamboo basket",
         actual_price: "$9.99"
+      
     },
     {
         id: 12,
@@ -135,6 +136,7 @@ export const productList = [
         product_reviews: `${star}`,
         product_title: "Off-white Pillow",
         actual_price: "$7.99"
+      
     }
 
 ];

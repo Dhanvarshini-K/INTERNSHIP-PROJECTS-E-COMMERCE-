@@ -1,0 +1,10 @@
+.account_profile{
+    background-color: var(--light);
+}
+.form-group.required .control-label:after {
+    content:"*";
+    color:var(--dark_grey);
+  }
+ .custom_width{
+    width: 200px !important;
+ }

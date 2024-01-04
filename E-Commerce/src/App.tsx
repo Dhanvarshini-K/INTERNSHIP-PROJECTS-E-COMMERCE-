@@ -8,19 +8,27 @@ import ShopPage from "./pages/Shop/shop";
 import ProductPage from "./pages/Product/product";
 import BlogPage from "./pages/Blog/blog";
 import ContactPage from "./pages/Contact/contact";
+import CartPage from './pages/Cart/cart';
+import AccountPage from './pages/Account/account';
+import Address from './components/Account/address';
+import OrderHistory from './components/Account/order';
 
 function App() {
 
   return (
     <>
     <Routes>
-      <Route path="/" element={<SignIn/>}/>
+      <Route path="/signin" element={<SignIn/>}/>
       <Route path="/" element={<Layout/>}>
           <Route path="/home" element={<HomePage/>}/>
           <Route path="/shop" element={<ShopPage/>}/>
           <Route path="/product" element={<ProductPage/>}/>
           <Route path="/blog" element={<BlogPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
+          <Route path='/cart' element={<CartPage/>}/>
+          <Route path='/account' element={<AccountPage/>}/>
+          <Route path='/address' element={<Address/>}/>
+          <Route path='/order' element={<OrderHistory/>}/>
       </Route>
     </Routes>
     </>

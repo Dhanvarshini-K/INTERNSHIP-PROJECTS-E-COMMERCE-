@@ -7,8 +7,7 @@ const CardItem = () => {
                
                     <img src={cards.image} alt="shipping" />
                     <span className="h6 fw-bold">{cards.title}</span>
-                    <p>{cards.description}</p>
-          
+                    <p>{cards.description}</p>          
             </section>
         )
     })

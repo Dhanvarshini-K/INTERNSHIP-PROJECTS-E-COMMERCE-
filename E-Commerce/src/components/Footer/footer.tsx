@@ -4,6 +4,8 @@ import footer_logo_image from "../../assets/images/footer_logo_image.svg";
 import instagram from "../../assets/icons/instagram_icon.svg";
 import facebook from "../../assets/icons/facebook_icon.svg";
 import youtube from "../../assets/icons/youtube_icon.svg";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
     return (
@@ -29,19 +31,19 @@ const Footer = () => {
                         <p className="text-white">Gift & Decoration Store</p>
                     </div>
                     <div className="navbar text-white gap-4 fs-5 d-flex flex-wrap  flex-sm-wrap align-items-center justify-content-md-center px-5 justify-content-center pb-4">
-                        <a className="nav-link active" aria-current="page" href="#">Home</a>
-                        <a className="nav-link" href="#">Shop</a>
-                        <a className="nav-link" href="#">Product</a>
-                        <a className="nav-link" href="#">Blog</a>
-                        <a className="nav-link" href="#">Contact Us</a>
+                        <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
+                        <Link className="nav-link" to="/shop">Shop</Link>
+                        <Link className="nav-link" to="/product">Product</Link>
+                        <Link className="nav-link" to="/blog">Blog</Link>
+                        <Link className="nav-link" to="/contact">Contact Us</Link>
                     </div>
                 </div>
 
                 <div className="contact_apps d-flex flex-wrap-reverse  justify-content-md-between justify-content-center pt-4 align-items-end">
                     <div className="navbar text-white gap-2 fs-6 text-center d-flex align-items-start flex-wrap justify-content-center">
                         <p>Copyright © 2023 3legant. All rights reserved </p>
-                        <a href="#" className="nav-link fw-medium">Privacy Policy</a>
-                        <a href="#" className="nav-link fw-medium">Terms of Use</a>
+                        <a href="#" className="nav-link fw-bold">Privacy Policy</a>
+                        <a href="#" className="nav-link fw-bold">Terms of Use</a>
                     </div>
                     <div className=" navbar text-white gap-3">
                         <a href="#" className="nav-link">

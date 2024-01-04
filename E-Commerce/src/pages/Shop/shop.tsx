@@ -1,10 +1,10 @@
+import ShopMain from "../../components/Shop/shop";
 
-import ShopMain from '../../components/Shop/shop';
 
 const ShopPage = () => {
     return (
         <>
-            <ShopMain/>
+        <ShopMain/>
         </>
     )
 }

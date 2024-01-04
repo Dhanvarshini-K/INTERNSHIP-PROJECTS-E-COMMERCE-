@@ -1,7 +1,7 @@
 .blog_image{
   background-image: url(../../assets//images/blog_image.svg);
   background-size: cover;
-  height: 70vh;
+  height: 50vh;
 }
 
 .grid_container {
@@ -10,5 +10,8 @@
   gap: 20px;
 }
 .select_conainer{
+  width: 200px;
+}
+.dropdown{
   width: 200px;
 }

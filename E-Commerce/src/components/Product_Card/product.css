@@ -4,10 +4,18 @@
 .review_image{
     width: 70px;
 }
-.product_category{
+.image_container{
     position: relative;
 }
 .add_to_cart{
     position: absolute;
-    top: 250px;
+    width: 100%;
+    bottom: 50px;
 }
+.add_to_cart > button{
+    width: 90%;
+}
+/* .product_image{
+    margin: 0 auto;
+    width: 100%;
+} */

@@ -10,3 +10,6 @@
 .advertisement{
     font-size: 14px;
 }
+.navbar-nav > li :active{
+    color: red;
+}
