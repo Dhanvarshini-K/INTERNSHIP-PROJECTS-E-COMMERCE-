@@ -10,8 +10,8 @@ import BlogPage from "./pages/Blog/blog";
 import ContactPage from "./pages/Contact/contact";
 import CartPage from './pages/Cart/cart';
 import AccountPage from './pages/Account/account';
-import Address from './components/Account/address';
-import OrderHistory from './components/Account/order';
+import Address from './components/Projects/Account/address';
+import OrderHistory from './components/Projects/Account/order';
 
 function App() {
 

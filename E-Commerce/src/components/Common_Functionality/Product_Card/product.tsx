@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Product_Card/product.css"
-import addwishlist_icon from "../../assets/icons/addwishlist_icon.svg"
-import { productList } from "../Data/product_card";
+import { productList } from "../../Data/product_card";
+import { addwishlist_icon } from "../../../assets/resources/icons";
 
 interface Props {
     view: String,
@@ -12,7 +12,7 @@ interface Props {
 const ProductItem = ({ view, layout_value, product }: Props) => {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-    const RenderProduct = productList.map((item) => {
+    const RenderProduct = productList.map((item:any) => {
         return (
             <div className="product_category  pt-5" key={item.id} onMouseOver={() => setSelectedImage(item.id)}
                 onMouseOut={() => setSelectedImage(null)}>

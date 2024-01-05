@@ -1,6 +1,6 @@
 import React from 'react'
 import "../SaleUp_card/saleup.css"
-import { SaleUpList } from '../Data/saleup_data'
+import { SaleUpList } from '../../Data/saleup_data'
 
 const AboutUs = () => {
     const RenderDetail = SaleUpList.filter((about)=>{

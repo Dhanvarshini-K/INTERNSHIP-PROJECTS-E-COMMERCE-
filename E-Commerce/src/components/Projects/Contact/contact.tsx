@@ -1,6 +1,6 @@
 import '../Contact/contact.css'
-import AboutUs from '../SaleUp_Card/aboutus';
-import CardItem from '../Service_Card/card';
+import AboutUs from '../Common_Functionality/SaleUp_Card/aboutus';
+import CardItem from '../Common_Functionality/Service_Card/card';
 import {
     chevron_right_icon,
     address_icons,

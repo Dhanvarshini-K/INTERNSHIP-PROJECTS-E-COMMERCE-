@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { sofia_image } from "../../assets/resources/images";
+import { sofia_image } from "../../../assets/resources/images";
 import "../Account/account.css"
 import { Link } from "react-router-dom";
 

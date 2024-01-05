@@ -8,8 +8,9 @@ import {
   first_page_third_icon,
   first_page_fourth_icon
 } from "../../assets/resources/icons";
-import ProductItem from "../Product_Card/product";
+
 import { useReducer, useState } from "react";
+import ProductItem from "../Common_Functionality/Product_Card/product";
 
 const ShopMain = () => {
 
@@ -195,7 +196,7 @@ const ShopMain = () => {
                 </div>
               </div>
             </div>
-            <ProductItem view={shopView} layout_value={"row"} product={showMore} />
+          <ProductItem view={shopView} layout_value={"row"} product={showMore}/>
           </div>
         </div>
       </section>

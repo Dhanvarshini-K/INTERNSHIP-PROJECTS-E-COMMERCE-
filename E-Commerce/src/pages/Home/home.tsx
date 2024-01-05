@@ -1,23 +1,22 @@
-import HomePageMain from "../../components/Home/home";
-import ProductItem from "../../components/Product_Card/product";
-import CardItem from "../../components/Service_Card/card";
-import ArticleMain from "../../components/Article_Card/article";
-import SaleUpMain from "../../components/SaleUp_Card/saleup";
+import CardItem from "../../components/Common_Functionality/Service_Card/card";
+import SaleUpMain from "../../components/Common_Functionality/SaleUp_Card/saleup";
 import "../Home/home.css"
-// import MyComponent from "../../components/Product_Card/MyComponent";
+import ProductItem from "../../components/Common_Functionality/Product_Card/product";
+import HomePageMain from "../../components/Projects/Home/home";
+import ArticleMain from "../../components/Projects/Article_Card/article";
+
 
 
 const HomePage = ()=>{
     return(
         <>
-        {/* <MyComponent/> */}
-        <HomePageMain/>
+      <HomePageMain/>
         <div className="product container">
-        <ProductItem view={"d-flex gap-3 pb-5 pt-2"} layout_value={""}/>
+            <ProductItem view={"d-flex gap-3 pb-5 pt-2"} layout_value={""} product={false}/>
         </div>
         <CardItem/>
         <SaleUpMain/>
-        <ArticleMain/>
+      <ArticleMain/>
         </>
     )
 }

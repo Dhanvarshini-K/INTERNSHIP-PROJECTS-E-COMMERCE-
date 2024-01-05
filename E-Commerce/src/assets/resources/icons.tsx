@@ -21,6 +21,8 @@ export {default as first_page_fourth_icon} from "../icons/first_page_fourth_icon
 
 export {default as star} from "../icons/star_icons.svg"
 export {default as heart_icon} from "../icons/heart_icon.svg"
+export {default as addwishlist_icon} from "../icons/addwishlist_icon.svg"
+
 
 //contact Icons
 

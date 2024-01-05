@@ -1,5 +1,5 @@
 import React from "react"
-import { orderData } from "../Data/order_data"
+import { orderData } from "../../Data/order_data"
 import AccountProfile from "./account_profile"
 const OrderHistory = () => {
   const RenderOrder = orderData.map((order) => {
