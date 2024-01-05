@@ -18,9 +18,10 @@
     background-size: cover;
     height: 50vh;
 }
-.product_image{
+/* .product_image{
 object-fit: cover !important;
-}
+} */
+
 .categories_list{
     overflow-y: scroll;
     flex-wrap: nowrap;

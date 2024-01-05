@@ -1,4 +1,5 @@
 import AccountProfile from "./account_profile";
+import "../Account/account.css";
 
 const AccountDetails = () => {
     return (

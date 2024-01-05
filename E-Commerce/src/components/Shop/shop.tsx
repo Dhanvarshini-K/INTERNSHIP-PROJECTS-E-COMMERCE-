@@ -26,9 +26,21 @@ const ShopMain = () => {
         return state;
     }
   };
+
+  const gridHeadingReducer = (state: boolean, action: any) => {
+    switch (action.type) {
+      case "Show":
+        return true;
+      case "Hide":
+        return false;
+      default:
+        return state;
+    }
+  }
   const [shopView, dispatch] = useReducer(shopReducer, 'row-cols-md-3');
   const [editFilter, setEditFilter] = useState(true);
-  const[showMore,setShowMore] = useState<Boolean>(false);
+  const [showMore, setShowMore] = useState<Boolean>(false);
+  const [gridHeading, dispatchGridHeading] = useReducer(gridHeadingReducer, false);
 
 
   return (
@@ -47,14 +59,14 @@ const ShopMain = () => {
 
 
       <section className="px-4 py-4" >
-        <div className="row">
-          {editFilter &&
-            <div className="col-lg-2 col-md-3 py-2">
+        <div className="row d-flex justify-content-center">
+          {editFilter && !gridHeading &&
+            <div className="col-lg-2 col-md-3 py-2 d-flex flex-column gap-4">
               <div className="filter_container d-flex align-items-start gap-2">
                 <img src={filter_icon} alt="filter" />
                 <span className='h4 fw-bold'>Filter</span>
               </div>
-              <div className="d-none d-md-block">
+              <div className="d-none d-md-block d-md-flex flex-md-column gap-3">
                 <span className='h4 fw-bold'>CATEGORIES</span>
                 <div className="categories_list navbar d-flex flex-column align-items-start fw-medium fs-5 gap-2 flex-nowrap pb-5">
                   <a className="nav-link" href="#">All Rooms</a>
@@ -106,10 +118,43 @@ const ShopMain = () => {
             </ul>
           </div> */}
 
-          <div className="col-lg-10 col-md-9 d-flex flex-column gap-2 py-2">
+
+          <div className="col-lg-10 col-md-9 d-flex flex-column gap-2 py-2 border">
             <div className="shoplist_container d-flex justify-content-between px-3 gap-2 flex-wrap">
-              <span className="livingroom_container h2 fw-bold">LivingRoom</span>
-              <div className="d-flex gap-5 align-items-start">
+             
+
+
+              <div className="sortby_container d-flex gap-5">
+              {!gridHeading &&
+                <span className="livingroom_container h2 fw-bold">LivingRoom</span>
+              }
+                {gridHeading &&
+                  <section className="container d-flex gap-4 ps-5">
+                    <div className="d-flex flex-column">
+                      <span className="h5 text-secondary fw-bold">Categories</span>
+                      <select className="p-1 rounded shadow-none">
+                        <option>All Room</option>
+                        <option>Living Room</option>
+                        <option>BedRoom</option>
+                        <option>BathRoom</option>
+                        <option>Dinning</option>
+                        <option>Outdoor</option>
+                      </select>
+                    </div>
+                    <div className="d-flex flex-column">
+                      <span className="h5 text-secondary fw-bold">Price</span>
+                      <select className="p-1 rounded shadow-none">
+                        <option>All Price</option>
+                        <option>$0.00 - 99.99</option>
+                        <option>$100.00 - 199.99</option>
+                        <option>$200.00- 299.99</option>
+                        <option>$300.00 - 399.99</option>
+                        <option>$400.00+</option>
+                      </select>
+                    </div>
+                  </section>
+                }
+                <div className="d-flex align-items-start gap-2">               
                 <div className="sorting_container d-flex gap-2 align-items-baseline">
                   <p className="text-center fw-bold">Sortby</p>
                   <img src={down_arrow} alt="down_arrow" className='down_arrow' />
@@ -117,33 +162,37 @@ const ShopMain = () => {
                 <div className="d-flex">
                   <button onClick={() => {
                     dispatch({ type: 'THREE' });
-                    setEditFilter(true)
+                    setEditFilter(true);
+                    dispatchGridHeading({ type: 'Hide' })
                   }} className="border-1 d-none d-md-block">
                     <img src={first_page_first_icon} alt="first_page_icon" />
                   </button>
                   <button onClick={() => {
                     dispatch({ type: 'FOUR' });
                     setEditFilter(false);
+                    dispatchGridHeading({ type: 'Show' })
                   }}
                     className="border-1 d-none d-md-block ">
                     <img src={first_page_second_icon} alt="first_page_icon" />
                   </button>
                   <button onClick={() => {
                     dispatch({ type: 'TWO' });
-                    setEditFilter(true)
+                    setEditFilter(true);
+                    dispatchGridHeading({ type: 'Show' })
                   }} className="border-1">
                     <img src={first_page_third_icon} alt="first_page_icon" />
                   </button>
                   <button onClick={() => {
                     dispatch({ type: 'ONE' });
-                    setEditFilter(true)
+                    setEditFilter(true);
+                    dispatchGridHeading({ type: 'Show' })
                   }} className="border-1">
                     <img src={first_page_fourth_icon} alt="first_page_icon" />
                   </button>
                 </div>
               </div>
+              </div>
             </div>
-
             <ProductItem view={shopView} layout_value={"row"} product={showMore} />
           </div>
         </div>

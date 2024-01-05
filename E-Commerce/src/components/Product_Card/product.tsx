@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Product_Card/product.css"
 import addwishlist_icon from "../../assets/icons/addwishlist_icon.svg"
 import { productList } from "./product_card";
+import {promise} from '../../appwrite.config';
 
 interface Props {
     view: String,
@@ -11,6 +12,7 @@ interface Props {
 
 const ProductItem = ({ view, layout_value, product }: Props) => {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
+    const promiseValue = promise;
 
     const RenderProduct = productList.map((item) => {
         return (
@@ -39,7 +41,7 @@ const ProductItem = ({ view, layout_value, product }: Props) => {
                 </div>
                 <div className="product_content d-flex flex-column pt-3">
                     <img src={item.product_reviews} alt="reviews" className="review_image" />
-                    <span className="h5 fw-bold">{item.product_title}</span>
+                    <span className="fw-bold">{item.product_title}</span>
                     <div className="product_price d-flex gap-3">
                         <span className="h6 fw-medium">{item.actual_price}</span>
                         <span className="h6 text-decoration-line-through text-secondary">{item.discount_price}</span>
@@ -51,7 +53,7 @@ const ProductItem = ({ view, layout_value, product }: Props) => {
     })
     return (
         <React.Fragment>
-
+            <h1></h1>
             <section className="product_container container ">
                 <div className="product_list d-flex gap-3 pb-5 pt-2 ">
                     <div className={`${layout_value} ${view}`}>

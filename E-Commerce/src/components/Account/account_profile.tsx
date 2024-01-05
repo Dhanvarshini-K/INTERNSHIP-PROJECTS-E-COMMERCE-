@@ -3,11 +3,12 @@ import sofia from "../../assets/images/sofia_image.svg"
 import "../Account/account.css"
 import { Link } from "react-router-dom";
 
-const AccountProfile:React.FC = () => {
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+const AccountProfile: React.FC = () => {
+  const [selectedValue, setSelectedValue] = useState('/account');
 
-  const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
+  const handleSelectChange = (e: any) => {
+    const value = e.target.value;
+    setSelectedValue(value);
   };
 
 
@@ -24,10 +25,10 @@ const AccountProfile:React.FC = () => {
         <a href="#" className=" text-decoration-none text-secondary fw-bold fs-5">Wishlist</a>
         <a href="#" className=" text-decoration-none text-secondary fw-bold fs-5">Logout</a>
       </div>
- 
-      <div className="dropdown d-sm-block d-md-none">
+
+      {/* <div className="dropdown d-sm-block d-md-none">
         <button className="fw-bold btn border-2 border-dark w-100 dropdown-toggle d-flex justify-content-between align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          {selectedOption}
+            select
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li><Link to="/account" className="dropdown-item" onclick={()=>setSelectedOption("Account")}>Account</Link></li>
@@ -36,8 +37,8 @@ const AccountProfile:React.FC = () => {
           <li><Link className="dropdown-item"  onclick={()=>setSelectedOption("Wishlist")}>Wishlist</Link></li>
           <li><Link className="dropdown-item"  onclick={()=>setSelectedOption("Logout")}>Logout</Link></li>
         </ul>
-      </div> 
-        {/* <div className="dropdown">
+      </div>  */}
+      {/* <div className="dropdown">
       <button className="btn btn-secondary dropdown-toggle" id="ecommerceDropdown" data-bs-toggle="dropdown" aria-expanded="false">
         {selectedOption || 'Select an option'}
       </button>
@@ -52,8 +53,28 @@ const AccountProfile:React.FC = () => {
         <p className="mt-2">Selected category: {selectedOption}</p>
       )}
     </div> */}
+      {/* <select
+        className="form-select form-select-lg mb-3"
+        aria-label=".form-select-lg example"
+        onChange={handleSelectChange}
+        value={selectedValue}
+      >
+        <option value="/account">
+          <Link to="/account">Account</Link>
+        </option>
+        <option value="/address">
+          <Link to="/address">Address</Link>
+        </option>
+        <option value="/order">
+          <Link to="/order">Order</Link>
+        </option>
+      </select> */}
 
-
+      <select>
+        <option>
+          account
+        </option>
+      </select>
     </section>
   )
 }
