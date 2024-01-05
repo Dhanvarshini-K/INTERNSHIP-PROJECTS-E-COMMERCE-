@@ -1,4 +1,4 @@
-import { ArticleItem } from './article_card'
+import { ArticleItem } from '../Data/article_card'
 interface Props {
     view : String
     addArticle : Boolean

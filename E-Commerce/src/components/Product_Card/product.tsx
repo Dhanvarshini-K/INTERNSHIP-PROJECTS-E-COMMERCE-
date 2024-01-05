@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../Product_Card/product.css"
 import addwishlist_icon from "../../assets/icons/addwishlist_icon.svg"
-import { productList } from "./product_card";
-import {promise} from '../../appwrite.config';
+import { productList } from "../Data/product_card";
 
 interface Props {
     view: String,
@@ -12,7 +11,6 @@ interface Props {
 
 const ProductItem = ({ view, layout_value, product }: Props) => {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
-    const promiseValue = promise;
 
     const RenderProduct = productList.map((item) => {
         return (

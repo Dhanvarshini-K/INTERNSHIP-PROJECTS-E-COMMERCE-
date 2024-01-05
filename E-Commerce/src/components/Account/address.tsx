@@ -1,6 +1,5 @@
 import AccountProfile from "./account_profile";
-import edit from "../../assets/icons/edit.svg";
-
+import { edit } from "../../assets/resources/icons";
 const Address = () => {
   return (
     <section className="container p-4 ">

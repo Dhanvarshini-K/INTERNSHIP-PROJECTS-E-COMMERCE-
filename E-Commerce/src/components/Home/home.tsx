@@ -1,9 +1,11 @@
 import "../Home/home.css"
-import slider_images from "../../assets/images/slider_images.svg";
-import livingroom_image from "../../assets/images/livingroom_image.svg"
-import bedroom_images from "../../assets/images/bedroom_images.svg";
-import kitchen_images from "../../assets/images/kitchen_images.svg";
-import arrow_right_icon from "../../assets/icons/arrow_right_icon.svg";
+import {
+    slider_images,
+    livingroom_image,
+    bedroom_images,
+    kitchen_images
+} from "../../assets/resources/images";
+import { arrow_right_icon } from "../../assets/resources/icons";
 import { Link } from "react-router-dom";
 
 

@@ -1,6 +1,6 @@
 import "../Form/form.css";
-import Sign_img from '../../assets/images/signin_images.svg';
-import hide_password from "../../assets/icons/hide_password_icons.png";
+import { hide_password } from "../../assets/resources/icons";
+import { Sign_img } from "../../assets/resources/images";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 

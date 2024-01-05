@@ -1,22 +1,25 @@
-import  { useState } from "react";
+import { useState } from "react";
 import "../Product/product.css";
-import chevron_right_icon from "../../assets/icons/chevron_right_icon.svg";
-import first_traytable from "../../assets/images/first_traytable_image.svg";
-import second_traytable from "../../assets/images/second_traytable_image.svg";
-import third_traytable from "../../assets/images/third_traytable_image.svg";
-import fourth_traytable from "../../assets/images/fourth_traytable_image.svg";
-import fifth_traytable from "../../assets/images/fifth_traytable_image.svg";
-import sixth_traytable from "../../assets/images/sixth_traytable_image.svg";
-import star from "../../assets/icons/star_icons.svg";
-import black_tray from "../../assets/images/black_tray.svg";
-import red_tray from "../../assets/images/red_tray.svg";
-import grey_tray from "../../assets/images/grey_tray.svg";
-import white_tray from "../../assets/images/white_tray.svg";
-import heart_icon from "../../assets/icons/heart_icon.svg";
-import down_arrow from "../../assets/icons/down_arrow.svg";
-import sofia_image from "../../assets/images/sofia_image.svg";
-import nicolas_image from "../../assets/images/nicolas_image.svg";
-import jensen_image from "../../assets/images/jensen_image.svg";
+import {
+    chevron_right_icon,
+    star,
+    heart_icon,
+    down_arrow
+} from "../../assets/resources/icons";
+import {
+    first_traytable,
+    second_traytable,
+    third_traytable,
+    fourth_traytable,
+    fifth_traytable,
+    sixth_traytable,
+    black_tray,
+    red_tray, grey_tray,
+    white_tray,
+    sofia_image,
+    jensen_image,
+    nicolas_image
+} from "../../assets/resources/images";
 
 const ProductMain = () => {
     const [showInfo, setShowInfo] = useState(false);

@@ -1,24 +1,26 @@
-import sofaImages from "../../assets/images/sofa_images.svg";
-import luxuaryImages from "../../assets/images/luxuary_sofa_images.svg";
-import tableLamp from "../../assets/images/tablelamp_image.svg";
-import cozySofa from "../../assets/images/cozy_sofa_images.svg";
-import drawer from "../../assets/images/drawer_images.svg";
-import first_traytable from "../../assets/images/first_traytable_image.svg";
-import stand_lamp from "../../assets/images/stand_lamp_images.svg";
-import brow_side_table from "../../assets/images/brow_side_table_images.svg"
-import pillow from "../../assets/images/pillow_images.svg";
-import lamp from "../../assets/images/lamp_image.svg";
-import basket from "../../assets/images/basket_image.svg";
-import white_pillow from "../../assets/images/off_white_pillow_image.svg";
-import star from "../../assets/icons/star_icons.svg";
 
+import {
+    sofaImages,
+    luxuaryImages,
+    tableLamp,
+    cozySofa,
+    drawer,
+    first_traytable,
+    stand_lamp,
+    brow_side_table,
+    pillow,
+    lamp,
+    basket,
+    white_pillow
+} from "../../assets/resources/images"
+import { star } from "../../assets/resources/icons"
 
 interface productList {
     id: number,
-    image:String,
+    image: String,
     discount_title: String,
     discount_percent: String,
-    product_reviews:String ,
+    product_reviews: String,
     product_title: String,
     actual_price: String,
     discount_price: String
@@ -126,7 +128,7 @@ export const productList = [
         product_reviews: `${star}`,
         product_title: "Bamboo basket",
         actual_price: "$9.99"
-      
+
     },
     {
         id: 12,
@@ -136,7 +138,7 @@ export const productList = [
         product_reviews: `${star}`,
         product_title: "Off-white Pillow",
         actual_price: "$7.99"
-      
+
     }
 
 ];

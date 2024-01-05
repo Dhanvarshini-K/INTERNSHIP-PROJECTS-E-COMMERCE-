@@ -1,5 +1,5 @@
-import saleUp from "../../assets/images/saleup_image.svg";
-import arrow_right_icon from "../../assets/icons/arrow_right_icon.svg"
+import { arrow_right_icon } from "../../assets/resources/icons";
+import { saleUp } from "../../assets/resources/images";
 export const SaleUpList = [
     {
         id:1,

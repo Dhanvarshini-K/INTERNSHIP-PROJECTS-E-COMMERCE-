@@ -1,11 +1,13 @@
 import "../Shop/shop.css";
-import chevron_right_icon from "../../assets/icons/chevron_right_icon.svg";
-import filter_icon from "../../assets/icons/filter_icon.svg";
-import down_arrow from "../../assets/icons/down_arrow.svg";
-import first_page_first_icon from "../../assets/icons/first_page_first_icon.svg";
-import first_page_second_icon from "../../assets/icons/first_page_second_icon.svg";
-import first_page_third_icon from "../../assets/icons/first_page_third_icon.svg";
-import first_page_fourth_icon from "../../assets/icons/first_page_fourth_icon.svg";
+import {
+  chevron_right_icon,
+  filter_icon,
+  down_arrow,
+  first_page_first_icon,
+  first_page_second_icon,
+  first_page_third_icon,
+  first_page_fourth_icon
+} from "../../assets/resources/icons";
 import ProductItem from "../Product_Card/product";
 import { useReducer, useState } from "react";
 
@@ -121,13 +123,13 @@ const ShopMain = () => {
 
           <div className="col-lg-10 col-md-9 d-flex flex-column gap-2 py-2 border">
             <div className="shoplist_container d-flex justify-content-between px-3 gap-2 flex-wrap">
-             
+
 
 
               <div className="sortby_container d-flex gap-5">
-              {!gridHeading &&
-                <span className="livingroom_container h2 fw-bold">LivingRoom</span>
-              }
+                {!gridHeading &&
+                  <span className="livingroom_container h2 fw-bold">LivingRoom</span>
+                }
                 {gridHeading &&
                   <section className="container d-flex gap-4 ps-5">
                     <div className="d-flex flex-column">
@@ -154,43 +156,43 @@ const ShopMain = () => {
                     </div>
                   </section>
                 }
-                <div className="d-flex align-items-start gap-2">               
-                <div className="sorting_container d-flex gap-2 align-items-baseline">
-                  <p className="text-center fw-bold">Sortby</p>
-                  <img src={down_arrow} alt="down_arrow" className='down_arrow' />
+                <div className="d-flex align-items-start gap-2">
+                  <div className="sorting_container d-flex gap-2 align-items-baseline">
+                    <p className="text-center fw-bold">Sortby</p>
+                    <img src={down_arrow} alt="down_arrow" className='down_arrow' />
+                  </div>
+                  <div className="d-flex">
+                    <button onClick={() => {
+                      dispatch({ type: 'THREE' });
+                      setEditFilter(true);
+                      dispatchGridHeading({ type: 'Hide' })
+                    }} className="border-1 d-none d-md-block">
+                      <img src={first_page_first_icon} alt="first_page_icon" />
+                    </button>
+                    <button onClick={() => {
+                      dispatch({ type: 'FOUR' });
+                      setEditFilter(false);
+                      dispatchGridHeading({ type: 'Show' })
+                    }}
+                      className="border-1 d-none d-md-block ">
+                      <img src={first_page_second_icon} alt="first_page_icon" />
+                    </button>
+                    <button onClick={() => {
+                      dispatch({ type: 'TWO' });
+                      setEditFilter(true);
+                      dispatchGridHeading({ type: 'Show' })
+                    }} className="border-1">
+                      <img src={first_page_third_icon} alt="first_page_icon" />
+                    </button>
+                    <button onClick={() => {
+                      dispatch({ type: 'ONE' });
+                      setEditFilter(true);
+                      dispatchGridHeading({ type: 'Show' })
+                    }} className="border-1">
+                      <img src={first_page_fourth_icon} alt="first_page_icon" />
+                    </button>
+                  </div>
                 </div>
-                <div className="d-flex">
-                  <button onClick={() => {
-                    dispatch({ type: 'THREE' });
-                    setEditFilter(true);
-                    dispatchGridHeading({ type: 'Hide' })
-                  }} className="border-1 d-none d-md-block">
-                    <img src={first_page_first_icon} alt="first_page_icon" />
-                  </button>
-                  <button onClick={() => {
-                    dispatch({ type: 'FOUR' });
-                    setEditFilter(false);
-                    dispatchGridHeading({ type: 'Show' })
-                  }}
-                    className="border-1 d-none d-md-block ">
-                    <img src={first_page_second_icon} alt="first_page_icon" />
-                  </button>
-                  <button onClick={() => {
-                    dispatch({ type: 'TWO' });
-                    setEditFilter(true);
-                    dispatchGridHeading({ type: 'Show' })
-                  }} className="border-1">
-                    <img src={first_page_third_icon} alt="first_page_icon" />
-                  </button>
-                  <button onClick={() => {
-                    dispatch({ type: 'ONE' });
-                    setEditFilter(true);
-                    dispatchGridHeading({ type: 'Show' })
-                  }} className="border-1">
-                    <img src={first_page_fourth_icon} alt="first_page_icon" />
-                  </button>
-                </div>
-              </div>
               </div>
             </div>
             <ProductItem view={shopView} layout_value={"row"} product={showMore} />

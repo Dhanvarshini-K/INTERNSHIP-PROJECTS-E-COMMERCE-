@@ -1,5 +1,5 @@
 import { useState } from "react";
-import sofia from "../../assets/images/sofia_image.svg"
+import { sofia_image } from "../../assets/resources/images";
 import "../Account/account.css"
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const AccountProfile: React.FC = () => {
   return (
     <section className="account_profile rounded d-flex align-items-center flex-column p-3 py-5 gap-4 m-2">
       <div className="d-flex flex-column align-items-center">
-        <img src={sofia} alt="sofia_image" className="img-fluid w-25" />
+        <img src={sofia_image} alt="sofia_image" className="img-fluid w-25" />
         <span className="h4 fw-bold">Sofia Hervertz</span>
       </div>
       <div className="account_links d-md-flex flex-column gap-3 d-none d-md-block">

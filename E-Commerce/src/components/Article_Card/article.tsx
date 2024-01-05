@@ -1,7 +1,7 @@
 import React from "react";
 import "../Article_Card/article.css";
-import { ArticleItem } from "./article_card";
-import arrow_right_icon from "../../assets/icons/arrow_right_icon.svg";
+import { ArticleItem } from "../Data/article_card";
+import { arrow_right_icon } from "../../assets/resources/icons";
 import { Link } from "react-router-dom";
 
 const ArticleMain = () => {

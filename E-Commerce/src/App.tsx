@@ -12,7 +12,6 @@ import CartPage from './pages/Cart/cart';
 import AccountPage from './pages/Account/account';
 import Address from './components/Account/address';
 import OrderHistory from './components/Account/order';
-// import YourComponent from './components/Account/sample';
 
 function App() {
 
@@ -30,7 +29,6 @@ function App() {
           <Route path='/account' element={<AccountPage/>}/>
           <Route path='/address' element={<Address/>}/>
           <Route path='/order' element={<OrderHistory/>}/>
-          {/* <Route path="/sample" element={<YourComponent/>}/> */}
       </Route>
     </Routes>
     </>

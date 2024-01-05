@@ -1,4 +1,4 @@
-import { cardList } from "./service_card";
+import { cardList } from "../Data/service_card";
 import "../Service_Card/card.css";
 const CardItem = () => {
     const RenderCard = cardList.map((cards) => {

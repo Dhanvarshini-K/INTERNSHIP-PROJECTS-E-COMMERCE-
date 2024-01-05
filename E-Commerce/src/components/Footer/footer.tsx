@@ -1,9 +1,11 @@
 import "../Footer/footer.css"
-import mail_icon from "../../assets/icons/mail_icon.svg";
-import footer_logo_image from "../../assets/images/footer_logo_image.svg";
-import instagram from "../../assets/icons/instagram_icon.svg";
-import facebook from "../../assets/icons/facebook_icon.svg";
-import youtube from "../../assets/icons/youtube_icon.svg";
+import { footer_logo_image } from "../../assets/resources/images";
+import {
+    mail_icon,
+    instagram,
+    facebook,
+    youtube
+} from "../../assets/resources/icons";
 import { Link } from "react-router-dom";
 
 

@@ -1,11 +1,13 @@
 import { useReducer, useState } from "react";
 import "../Blog/blog.css";
-import chevron_right_icon from "../../assets/icons/chevron_right_icon.svg";
-import down_arrow from "../../assets/icons/down_arrow.svg";
-import first_page_first_icon from "../../assets/icons/first_page_first_icon.svg";
-import first_page_second_icon from "../../assets/icons/first_page_second_icon.svg";
-import first_page_third_icon from "../../assets/icons/first_page_third_icon.svg";
-import first_page_fourth_icon from "../../assets/icons/first_page_fourth_icon.svg";
+import {
+    chevron_right_icon,
+    down_arrow,
+    first_page_first_icon,
+    first_page_second_icon,
+    first_page_third_icon,
+    first_page_fourth_icon
+} from "../../assets/resources/icons";
 
 import ArticleList from "../Article_Card/articleList";
 
@@ -75,7 +77,7 @@ const BlogMain = () => {
                 </div>
                 <div className="dropdown d-sm-block d-md-none">
                     <button className="fw-bold btn border-2 border-dark w-100 dropdown-toggle d-flex justify-content-between align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                       All Blogs
+                        All Blogs
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a className="dropdown-item" href="#">Action</a></li>

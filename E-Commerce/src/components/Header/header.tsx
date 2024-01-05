@@ -1,15 +1,17 @@
 import "../Header/header.css";
-import ticket_percent from "../../assets/icons/ticket-percent-icon.svg";
-import right_arrow_icon from "../../assets/icons/right_arrow_icon.svg";
-import close_icon from "../../assets/icons/close_icon.svg";
-import Logo from "../../assets/icons/Logo.svg";
-import search_icon from "../../assets/icons/search_icon.svg";
-import account_icon from "../../assets/icons/account_icon.svg";
-import cart_icon from "../../assets/icons/cart_icon.svg";
-import wishlist_heart_icon from "../../assets/icons/wishlist_heart_icon.svg";
-import ham_instagram_icon from "../../assets/icons/ham_instagram_icon.svg";
-import ham_facebook_icon from "../../assets/icons/ham_facebook_icon.svg";
-import ham_youtube_icon from "../../assets/icons/ham_youtube_icon.svg";
+import {
+    ticket_percent,
+    right_arrow_icon,
+    close_icon,
+    Logo,
+    search_icon,
+    account_icon,
+    cart_icon,
+    wishlist_heart_icon,
+    ham_instagram_icon,
+    ham_facebook_icon,
+    ham_youtube_icon
+} from "../../assets/resources/icons";
 import { Link } from "react-router-dom";
 const Header = () => {
     return (
@@ -37,7 +39,7 @@ const Header = () => {
                     <div>
                         <button className="navbar-toggler border-0  shadow-none" type="button"
                             data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" 
+                            data-bs-target="#offcanvasNavbar"
                             aria-controls="offcanvasNavbar"
                             aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -47,7 +49,7 @@ const Header = () => {
                     <div className="d-flex gap-3 order-md-3">
                         <img src={search_icon} alt="search_icon" id="sub_header_icons" className="d-none d-md-block img-fluid" />
                         <Link to="/account">
-                        <img src={account_icon} alt="account_icon" id="sub_header_icons" className="d-none d-md-block img-fluid" />
+                            <img src={account_icon} alt="account_icon" id="sub_header_icons" className="d-none d-md-block img-fluid" />
                         </Link>
                         <Link to="/cart" className="d-flex text-decoration-none">
                             <img src={cart_icon} alt="account_icon" id="sub_header_icons" className="img-fluid" />

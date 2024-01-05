@@ -1,10 +1,12 @@
 import '../Contact/contact.css'
-import chevron_right_icon from "../../assets/icons/chevron_right_icon.svg";
-import address_icons from "../../assets/icons/address_icon.svg";
-import contact_icons from "../../assets/icons/contact_icons.svg";
-import email_icons from "../../assets/icons/email_icon.svg";
 import AboutUs from '../SaleUp_Card/aboutus';
 import CardItem from '../Service_Card/card';
+import {
+    chevron_right_icon,
+    address_icons,
+    email_icons,
+    contact_icons
+} from '../../assets/resources/icons';
 
 
 
@@ -32,7 +34,7 @@ const Contact = () => {
                 </div>
             </section>
 
-            <AboutUs/>
+            <AboutUs />
             <section className="container p-4">
                 <span className="h1 d-flex justify-content-center">Contact Us</span>
                 <div className=" card-deck d-flex justify-content-between gap-3 align-self-center align-items-stretch flex-wrap p-4">
@@ -88,7 +90,7 @@ const Contact = () => {
             </section>
 
 
-        <CardItem/>
+            <CardItem />
         </>
     )
 }

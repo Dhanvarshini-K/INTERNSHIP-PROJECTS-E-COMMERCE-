@@ -1,6 +1,6 @@
 import React from "react";
 import "./saleup.css";
-import { SaleUpList } from "./Saleup_data";
+import { SaleUpList } from "../Data/saleup_data";
 
 const SaleUpMain = () => {
     const RenderSaleUp = SaleUpList.filter((sale)=>{
