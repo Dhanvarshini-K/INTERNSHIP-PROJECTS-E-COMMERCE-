@@ -1,21 +1,20 @@
-.product_discount span{
-    width: 55px;
+.product_discount span {
+  width: 55px;
 }
-.review_image{
-    width: 70px;
+
+.product_content .review_image {
+  width: 70px;
 }
-.image_container{
-    position: relative;
+
+.product_image_container {
+  position: relative;
 }
-.add_to_cart{
-    position: absolute;
-    width: 100%;
-    bottom: 50px;
+
+.add_to_cart {
+  position: absolute;
+  width: 100%;
+  bottom: 50px;
 }
-.add_to_cart > button{
-    width: 90%;
-}
-/* .product_image{
-    margin: 0 auto;
-    width: 100%;
-} */
+.add_to_cart button {
+  width: 90%;
+}/*# sourceMappingURL=product.css.map */

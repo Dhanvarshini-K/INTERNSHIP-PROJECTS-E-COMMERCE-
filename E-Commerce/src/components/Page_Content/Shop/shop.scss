@@ -1,0 +1,91 @@
+@import "../../Scss/main.scss";
+
+.form-check-inline {
+    width: 170px;
+}
+
+.down_arrow {
+    width: 10px;
+}
+
+.shop_bg_image {
+    background-image: url(../../../assets/images/shop_bg_image.svg);
+    background-size: cover;
+    height: 50vh;
+}
+
+.categories_list {
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+    height: 230px;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color:$WhiteSmoke;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:$DarkGrey;
+    border-radius: 6px;
+}
+
+@media(min-width:768px) {
+    .shoplist_container {
+        width: 550px;
+    }
+}
+
+@media(min-width:1024px) {
+    .shoplist_container {
+        width: 950px;
+    }
+}
+
+@media(min-width:768px) and (max-width:926px) {
+    .product_content {
+        span {
+            font-size: 10px;
+
+        }
+    }
+
+}
+
+@media(min-width:320px) and (max-width:356px) {
+    .product_category {
+        span {
+            font-size: 10px;
+
+        }
+
+        .product_discount {
+            span {
+                width: 30px;
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+
+        .add_to_cart {
+            button {
+                font-size: 10px;
+
+            }
+        }
+    }
+    .shoplist_container {
+        span {
+            font-size: 25px;
+
+        }
+    }
+    .sorting_container>p {
+        font-size: 15px;
+    }
+}

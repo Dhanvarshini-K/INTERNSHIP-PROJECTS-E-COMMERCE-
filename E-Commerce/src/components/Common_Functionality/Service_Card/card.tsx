@@ -1,5 +1,5 @@
-import { cardList } from "../../Data/service_card";
-import "../Service_Card/card.css";
+import { cardList } from "../../Functionality_Data/service_card";
+import "../Service_Card/card.scss";
 const CardItem = () => {
     const RenderCard = cardList.map((cards) => {
         return (

@@ -1,6 +1,6 @@
 import React from "react";
-import "./saleup.css";
-import { SaleUpList } from "../../Data/saleup_data";
+import "./saleup.scss";
+import { SaleUpList } from "../../Functionality_Data/saleup_data";
 
 const SaleUpMain = () => {
     const RenderSaleUp = SaleUpList.filter((sale)=>{

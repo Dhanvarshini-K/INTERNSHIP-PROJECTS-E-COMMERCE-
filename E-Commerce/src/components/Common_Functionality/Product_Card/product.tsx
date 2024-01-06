@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../Product_Card/product.css"
-import { productList } from "../../Data/product_card";
+import "../Product_Card/product.scss"
+import { productList } from "../../Functionality_Data/product_card";
 import { addwishlist_icon } from "../../../assets/resources/icons";
 
 interface Props {
@@ -16,7 +16,7 @@ const ProductItem = ({ view, layout_value, product }: Props) => {
         return (
             <div className="product_category  pt-5" key={item.id} onMouseOver={() => setSelectedImage(item.id)}
                 onMouseOut={() => setSelectedImage(null)}>
-                <div className="image_container">
+                <div className="product_image_container">
                     <img src={item.image} alt="product_image" className="product_image" style={{ width: "-webkit-fill-available" }} />
                     <div className=" product_discount carousel-item active d-flex justify-content-between pt-3 ps-3">
                         <div className="d-flex flex-column">

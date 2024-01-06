@@ -1,9 +1,9 @@
-import CartMain from "../../components/Cart/cart_page";
+import CartMain from "../../components/Projects/Cart/cart_page";
 
 const CartPage = () => {
   return (
     <div>
-        <CartMain/>
+      <CartMain/>
     </div>
   )
 }

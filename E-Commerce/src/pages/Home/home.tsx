@@ -1,6 +1,6 @@
 import CardItem from "../../components/Common_Functionality/Service_Card/card";
 import SaleUpMain from "../../components/Common_Functionality/SaleUp_Card/saleup";
-import "../Home/home.css"
+import "../Home/home.scss"
 import ProductItem from "../../components/Common_Functionality/Product_Card/product";
 import HomePageMain from "../../components/Projects/Home/home";
 import ArticleMain from "../../components/Projects/Article_Card/article";

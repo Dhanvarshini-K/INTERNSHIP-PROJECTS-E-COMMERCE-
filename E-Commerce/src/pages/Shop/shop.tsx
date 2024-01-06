@@ -1,4 +1,4 @@
-import ShopMain from "../../components/Shop/shop";
+import ShopMain from "../../components/Projects/Shop/shop";
 
 
 const ShopPage = () => {

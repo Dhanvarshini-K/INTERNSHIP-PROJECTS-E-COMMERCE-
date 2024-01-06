@@ -1,6 +1,11 @@
-.saleup_images{
-    width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@100&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
 }
-.saleup_container{
-    background-color: var(--light);
+
+.saleup_container {
+  background-color: #F3F5F7;
 }
+.saleup_container .saleup_images {
+  width: 100%;
+}/*# sourceMappingURL=saleup.css.map */

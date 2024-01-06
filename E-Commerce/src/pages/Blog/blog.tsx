@@ -1,5 +1,4 @@
-import BlogMain from "../../components/Blog/blog";
-// import BlogContainer from "../../components/Blog/sample";
+import BlogMain from "../../components/Projects/Blog/blog";
 
 
 

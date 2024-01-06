@@ -1,9 +1,7 @@
 
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import SignIn from "./components/Form/sign_in";
 import HomePage from "./pages/Home/home";
-import Layout from "./components/Layout/layout";
 import ShopPage from "./pages/Shop/shop";
 import ProductPage from "./pages/Product/product";
 import BlogPage from "./pages/Blog/blog";
@@ -12,13 +10,17 @@ import CartPage from './pages/Cart/cart';
 import AccountPage from './pages/Account/account';
 import Address from './components/Projects/Account/address';
 import OrderHistory from './components/Projects/Account/order';
+import SignIn from './components/Projects/Form/sign_in';
+import Layout from './components/Projects/Layout/layout';
+import SignUp from './components/Projects/Form/sign_up';
 
 function App() {
 
   return (
     <>
     <Routes>
-      <Route path="/signin" element={<SignIn/>}/>
+      <Route index path="/" element={<SignIn/>}/>
+      <Route path='/signup' element={<SignUp/>}/>
       <Route path="/" element={<Layout/>}>
           <Route path="/home" element={<HomePage/>}/>
           <Route path="/shop" element={<ShopPage/>}/>

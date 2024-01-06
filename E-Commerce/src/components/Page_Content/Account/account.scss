@@ -1,0 +1,17 @@
+@import "../../Scss/main.scss";
+
+.account_profile {
+    background-color: $light;
+}
+
+.form-group.required {
+    .control-label:after {
+        content: "*";
+        color: $dark_grey;
+    }
+
+}
+
+.button_custom_width {
+    width: 200px !important;
+}
