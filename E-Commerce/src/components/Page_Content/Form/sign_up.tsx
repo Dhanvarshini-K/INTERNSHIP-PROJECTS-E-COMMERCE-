@@ -2,33 +2,53 @@ import { hide_password } from "../../../assets/resources/icons";
 import { Sign_img } from "../../../assets/resources/images";
 import { Link } from "react-router-dom";
 import "../Form/form.scss"
+import { useAuth } from "../../../utils/AuthContext";
+import { useRef } from "react";
 
 
 const SignUp = () => {
+   const {registerUser}   = useAuth()
+    const signupForm = useRef(null)
+    const handleSubmit = (e:any) => {
+        e.preventDefault()
+        const name = signupForm.current.name.value
+        const username = signupForm.current.username.value
+        const email = signupForm.current.email.value
+        const password = signupForm.current.password.value
+        // const password2 = registerForm.current.password2.value
+        // if(password1 !== password2){
+        //     alert('Passwords did not match!')
+        //     return
+        // }
+        const userInfo = {name,username, email, password}
+        registerUser(userInfo)
+    }
    return (
       <>
          <div className="container mt-3  flex-md-nowrap">
             <section className='d-flex justify-content-between flex-wrap flex-md-nowrap gap-lg-4'>
                <img src={Sign_img} alt="" className='signup_image' />
                <div className="signup_container mt-3 d-flex flex-column justify-content-lg-center">
-                  <form className='d-flex flex-column gap-xl-1 gap-xxl-2'>
-                     <span className='text-start h2'>Sign Up</span>
+                  <form className='d-flex flex-column gap-xl-1 gap-xxl-2' ref={signupForm} onSubmit={handleSubmit}>
+                     <span className='text-start h1'>Sign Up</span>
                      <p>
                         Already have an account?
                         <Link to="/" class="text-success text-decoration-none fs-6"> Sign In</Link>
                      </p>
                      <div className="mb-3 border-bottom">
                         <input
-                           type="email"
+                           type="text"
                            className="form-control border-0 shadow-none"
                            placeholder="Your name "
+                           name="name"
                         />
                      </div>
                      <div className="mb-3 border-bottom">
                         <input
-                           type="email"
+                           type="text"
                            className="form-control border-0 shadow-none"
                            placeholder="Username"
+                           name="username"
                         />
                      </div>
                      <div className="mb-3 border-bottom">
@@ -36,6 +56,7 @@ const SignUp = () => {
                            type="email"
                            className="form-control border-0 shadow-none"
                            placeholder="Email address"
+                           name="email"
                         />
                      </div>
                      <div className="d-flex align-items-center mb-3 border-bottom">
@@ -43,6 +64,7 @@ const SignUp = () => {
                            type="password"
                            className="form-control border-0  shadow-none"
                            placeholder="Password"
+                           name="password"
                         />
                         <img src={hide_password} alt="hide_password" className='hide_password' />
                      </div>
