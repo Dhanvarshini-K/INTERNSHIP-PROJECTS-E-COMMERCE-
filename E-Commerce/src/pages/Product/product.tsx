@@ -1,5 +1,5 @@
 import ProductItem from "../../components/Common_Functionality/Product_Card/product";
-import ProductMain from "../../components/Projects/Product/product";
+import ProductMain from "../../components/Page_Content/Product/product";
 import "../Home/home.scss"
 
 

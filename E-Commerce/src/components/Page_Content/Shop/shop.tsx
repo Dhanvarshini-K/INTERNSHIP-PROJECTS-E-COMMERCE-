@@ -125,10 +125,7 @@ const ShopMain = () => {
 
           <div className="col-lg-10 col-md-9 d-flex flex-column gap-2 py-2 border">
             <div className="shoplist_container d-flex justify-content-between px-3 gap-2 flex-wrap">
-
-
-
-              <div className="sortby_container d-flex gap-5">
+              <div className="sortby_container d-flex justify-content-between">
                 {!gridHeading &&
                   <span className="livingroom_container h2 fw-bold">LivingRoom</span>
                 }

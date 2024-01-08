@@ -1,8 +1,13 @@
+import { useRef } from "react";
 import { sofia_image } from "../../../assets/resources/images";
 import "../Account/account.scss"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../utils/AuthContext";
 
 const AccountProfile: React.FC = () => {
+  const navigate = useNavigate()
+
+  const {user,logoutUser} = useAuth()
 
   return (
     <section className="account_profile rounded d-flex align-items-center flex-column p-3 py-5 gap-4 m-2">
@@ -15,7 +20,7 @@ const AccountProfile: React.FC = () => {
         <Link to="/address" className=" text-decoration-none text-secondary fw-bold fs-5">Address</Link>
         <Link to="/order" className=" text-decoration-none text-secondary fw-bold fs-5">Orders</Link>
         <a href="#" className=" text-decoration-none text-secondary fw-bold fs-5">Wishlist</a>
-        <a href="#" className=" text-decoration-none text-secondary fw-bold fs-5">Logout</a>
+        <button onClick={logoutUser} className=" border-0 bg-transparent text-secondary fw-bold fs-5">Logout</button>
       </div>
   </section>
   )
