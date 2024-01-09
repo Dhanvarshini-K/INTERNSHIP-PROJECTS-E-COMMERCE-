@@ -13,7 +13,19 @@ import {
     ham_youtube_icon
 } from "../../../assets/resources/icons";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { productList } from "../../Functionality_Data/product_card";
 const Header = () => {
+    const [openSearch,setOpenSearch] = useState(false);
+    const [searchInput,setSearchInput] = useState("");
+    const [searchData,setSearchData] = useState([]);
+
+    useEffect(()=>{
+        const SearchProduct: any= productList.filter((search)=>{
+            return search.product_title.toLowerCase().includes(searchInput.toLocaleLowerCase());
+        });
+        setSearchData(SearchProduct);
+    },[searchInput])
     return (
         <>
             <section className="header_container container-fluid py-1 d-flex justify-content-between bg-body-tertiary">
@@ -47,14 +59,35 @@ const Header = () => {
                         <img src={Logo} alt="Logo" />
                     </div>
                     <div className="d-flex gap-3 order-md-3">
+                       {openSearch && 
+                       <input type="search" className="rounded border-1 ps-2 border-secondary" placeholder="Search" value={searchInput} 
+                       onChange={(e)=>{
+                        setSearchInput(e.target.value);
+                       }}  />
+                      
+                       } 
+                        {/* <div>
+                            {searchData.map((searchdata)=>{
+                                return (
+                                    <h1>{searchdata.product_title}</h1>
+                                );
+                            })}
+                        </div> */}
+                        <button onClick={()=>setOpenSearch(!openSearch)} className="border-0 bg-transparent">
                         <img src={search_icon} alt="search_icon" id="sub_header_icons" className="d-none d-md-block img-fluid" />
+                        </button>
+                        <button className="border-0 bg-transparent">
                         <Link to="/account">
                             <img src={account_icon} alt="account_icon" id="sub_header_icons" className="d-none d-md-block img-fluid" />
                         </Link>
-                        <Link to="/cart" className="d-flex text-decoration-none">
+                        </button>
+                       <button className="border-0 bg-transparent">
+                       <Link to="/cart" className="d-flex text-decoration-none">
                             <img src={cart_icon} alt="account_icon" id="sub_header_icons" className="img-fluid" />
                             <div className="bg-dark text-white fw-medium px-2 pb-1 rounded-circle text-center">0</div>
                         </Link>
+                       </button>
+                       
                     </div>
 
                     <div className="hamburger_container offcanvas offcanvas-start w-auto bg-body-tertiary" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -70,7 +103,7 @@ const Header = () => {
                                     <div className="form-group has-search">
                                         <span className="fa fa-search form-control-feedback"></span>
                                         <button className="border-0 bg-body-tertiary">
-                                            <input type="text" className="form-control shadow-none pl-3" placeholder="Search" />
+                                            <input type="search" className="form-control shadow-none pl-3" placeholder="Search" />
                                         </button>
                                     </div>
                                 </div>

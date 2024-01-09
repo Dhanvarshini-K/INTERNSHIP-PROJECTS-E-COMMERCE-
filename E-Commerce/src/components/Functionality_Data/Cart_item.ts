@@ -9,20 +9,29 @@ export const cartItem = [
         title:"Tray Table",
         color:"Black",
         icon: `${remove}`,
-        delete : "Remove" 
+        delete : "Remove" ,
+        quantity: 2,
+        price:19.00,
+        subtotal: 38.00
     },
     {
         image:`${red_traytable}`,
         title:"Tray Table",
         color:"Black",
         icon: `${remove}`,
-        delete : "Remove" 
+        delete : "Remove" ,
+        quantity: 2,
+        price:19.00,
+        subtotal: 38.00
     },
     {
         image:`${tablelamp}`,
-        title:"Tray Table",
+        title:"Table Lamp",
         color:"Black",
         icon: `${remove}`,
-        delete : "Remove" 
+        delete : "Remove" ,
+        quantity: 2,
+        price:39.00,
+        subtotal: 38.00
     }
 ]

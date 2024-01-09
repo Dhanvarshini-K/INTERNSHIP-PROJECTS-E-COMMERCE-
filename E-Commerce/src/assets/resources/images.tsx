@@ -67,7 +67,9 @@ export {default as white_pillow} from "../images/off_white_pillow_image.svg"
 export {default as saleUp} from "../images/saleup_image.svg"
 
 
+//cart Images
 
+export {default as cart_tablelamp} from "../images/cart_tablelamp.svg"
 
 
 
