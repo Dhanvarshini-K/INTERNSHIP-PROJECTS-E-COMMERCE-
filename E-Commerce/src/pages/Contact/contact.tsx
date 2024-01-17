@@ -1,10 +1,10 @@
 import Contact from "../../components/Page_Content/Contact/contact";
-const ContactPage= () => {
+const ContactPage = () => {
   return (
     <div>
-      <Contact/>
+      <Contact />
     </div>
-  )
-}
+  );
+};
 
 export default ContactPage;

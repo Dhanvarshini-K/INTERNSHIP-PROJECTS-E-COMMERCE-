@@ -1,8 +1,8 @@
 import ShopCategory from "../../components/Page_Content/ShopCategory/shop_category";
 const ShopPage = () => {
- return (
+  return (
     <>
-    <ShopCategory category="" />
+      <ShopCategory category="" />
     </>
   );
 };

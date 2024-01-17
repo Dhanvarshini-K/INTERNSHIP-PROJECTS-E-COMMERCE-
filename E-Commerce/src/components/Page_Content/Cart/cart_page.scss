@@ -24,11 +24,7 @@ input[type='radio']{
     height: fit-content;
 }
 
-// @media(min-width:640px) and (max-width:1000px){
-//     .quantity_button{
-//         width: 100%;
-//     }
-// }
+
 @media(max-width:680px){
     .cart_header{       
             overflow-x: scroll;

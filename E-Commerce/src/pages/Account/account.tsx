@@ -4,10 +4,10 @@ import AccountProfile from "../../components/Page_Content/Account/account_profil
 const AccountPage = () => {
   return (
     <div>
-      <AccountProfile/>
-      <AccountDetails/>
+      <AccountProfile />
+      <AccountDetails />
     </div>
-  )
-}
+  );
+};
 
 export default AccountPage;

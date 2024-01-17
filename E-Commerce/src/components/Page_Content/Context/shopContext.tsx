@@ -1,7 +1,5 @@
-
-
-import  { createContext, ReactNode } from 'react';
-import { productList } from '../../Functionality_Data/all_product_card';
+import { createContext, ReactNode } from "react";
+import { productList } from "../../Functionality_Data/all_product_card";
 
 interface ShopContextValue {
   productList: any[]; // Replace 'any' with the actual type of your productList
@@ -21,4 +19,3 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
 };
 
 export default ShopContextProvider;
-

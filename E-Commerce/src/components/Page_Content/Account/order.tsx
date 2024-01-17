@@ -1,5 +1,5 @@
-import React from "react"
-import { orderData } from "../../Functionality_Data/order_data"
+import React from "react";
+import { orderData } from "../../Functionality_Data/order_data";
 const OrderHistory = () => {
   const renderOrder = orderData.map((order) => {
     return (
@@ -29,8 +29,8 @@ const OrderHistory = () => {
           </div>
         </div>
       </>
-    )
-  })
+    );
+  });
   return (
     <React.Fragment>
       <div>
@@ -52,9 +52,9 @@ const OrderHistory = () => {
             </div>
           </div>
         </section>
-
       </div>
-    </React.Fragment>)
-}
+    </React.Fragment>
+  );
+};
 
-export default OrderHistory
+export default OrderHistory;
