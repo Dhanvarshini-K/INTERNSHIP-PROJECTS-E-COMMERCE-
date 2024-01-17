@@ -15,11 +15,7 @@ const SignUp = () => {
         const username = signupForm.current.username.value
         const email = signupForm.current.email.value
         const password = signupForm.current.password.value
-        // const password2 = registerForm.current.password2.value
-        // if(password1 !== password2){
-        //     alert('Passwords did not match!')
-        //     return
-        // }
+
         const userInfo = {name,username, email, password}
         registerUser(userInfo)
     }
@@ -33,7 +29,7 @@ const SignUp = () => {
                      <span className='text-start h1'>Sign Up</span>
                      <p>
                         Already have an account?
-                        <Link to="/" class="text-success text-decoration-none fs-6"> Sign In</Link>
+                        <Link to="/" className="text-success text-decoration-none fs-6"> Sign In</Link>
                      </p>
                      <div className="mb-3 border-bottom">
                         <input

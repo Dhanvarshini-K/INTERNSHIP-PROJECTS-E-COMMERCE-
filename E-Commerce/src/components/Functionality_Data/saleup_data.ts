@@ -1,6 +1,6 @@
 import { arrow_right_icon } from "../../assets/resources/icons";
 import { saleUp } from "../../assets/resources/images";
-export const SaleUpList = [
+export const saleUpList = [
     {
         id:1,
         image:`${saleUp}`,

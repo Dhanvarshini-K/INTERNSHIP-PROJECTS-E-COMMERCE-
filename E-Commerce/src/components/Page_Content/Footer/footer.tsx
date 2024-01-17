@@ -32,7 +32,7 @@ const Footer = () => {
                         <p className="text-white">Gift & Decoration Store</p>
                     </div>
                     <div className="navbar text-white gap-4 fs-5 d-flex flex-wrap  flex-sm-wrap align-items-center justify-content-md-center px-5 justify-content-center pb-4">
-                        <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
+                        <Link className="nav-link " aria-current="page" to="/home">Home</Link>
                         <Link className="nav-link" to="/shop">Shop</Link>
                         <Link className="nav-link" to="/product">Product</Link>
                         <Link className="nav-link" to="/blog">Blog</Link>

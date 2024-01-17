@@ -93,7 +93,7 @@ const BlogMain = () => {
 
             <div className="p-4 d-flex justify-content-center">
                 {showMore ? (<button onClick={() => setShowMore(false)} className="btn shadow-none bg-white btn-rounded border-dark" >Show Less</button>) :
-                    <button onClick={() => setShowMore(true)} className="btn shadow-none bg-white btn-rounded border-dark">Show More</button>}
+                 <button onClick={() => setShowMore(true)} className="btn shadow-none bg-white btn-rounded border-dark">Show More</button>}
             </div>
 
 

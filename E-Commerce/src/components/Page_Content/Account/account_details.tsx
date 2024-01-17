@@ -1,4 +1,3 @@
-import AccountProfile from "./account_profile";
 import "../Account/account.scss";
 
 const AccountDetails = () => {
@@ -6,9 +5,9 @@ const AccountDetails = () => {
         <section className="container p-4">
             <div className="row d-flex gap-5">
                 <span className="h1 fw-bold text-center">My Account</span>
-                <div className="col-md-4 col-sm-12">
+                {/* <div className="col-md-4 col-sm-12">
                     <AccountProfile />
-                </div>
+                </div> */}
                 <div className="col d-flex gap-3 flex-column">
                     <span className="h4 fw-bold">Account Details</span>
                     <form className="myform d-flex  flex-column gap-3">

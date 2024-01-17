@@ -10,7 +10,7 @@ import {
     article5,
     article6
 } from "../../assets/resources/images";
-export const ArticleItem = [
+export const articleItem = [
     {
         id: 1,
         image: `${home_image}`,

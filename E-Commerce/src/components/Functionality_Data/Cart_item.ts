@@ -3,7 +3,7 @@ import red_traytable from "../../assets/images/cart_redtraytable.svg";
 import tablelamp from "../../assets/images/cart_tablelamp.svg";
 import remove from "../../assets/icons/remove_icon.svg"
 
-export const cartItem = [
+export const cartItems = [
     {
         image:`${black_traytable}`,
         title:"Tray Table",
@@ -11,27 +11,27 @@ export const cartItem = [
         icon: `${remove}`,
         delete : "Remove" ,
         quantity: 2,
-        price:19.00,
-        subtotal: 38.00
+        price:"19.00",
+        subtotal:" 38.00"
     },
     {
         image:`${red_traytable}`,
         title:"Tray Table",
-        color:"Black",
+        color:"Red",
         icon: `${remove}`,
         delete : "Remove" ,
         quantity: 2,
-        price:19.00,
-        subtotal: 38.00
+        price:"19.00",
+        subtotal: "38.00"
     },
     {
         image:`${tablelamp}`,
         title:"Table Lamp",
-        color:"Black",
+        color:"Gold",
         icon: `${remove}`,
         delete : "Remove" ,
         quantity: 2,
-        price:39.00,
-        subtotal: 38.00
+        price:"39.00",
+        subtotal: "38.00"
     }
 ]

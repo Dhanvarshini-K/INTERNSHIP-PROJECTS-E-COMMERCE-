@@ -28,7 +28,7 @@ import { useRef } from "react";
          <div className="container mt-3  flex-md-nowrap">
             <section className='d-flex justify-content-between flex-wrap flex-md-nowrap'>
                <img src={Sign_img} alt="signin" className='signin_image'  />
-               <div className="signin_container mt-3 d-flex flex-column justify-content-lg-center p-3 p-md-5">
+               <div className="signin_container mt-3 d-flex flex-column justify-content-lg-center p-1 p-md-4">
                   <form ref={signInForm} onSubmit={handleSignInSubmit} className='d-flex flex-column gap-xl-2 gap-xxl-4'   > 
                  
                      <span className='text-start h1'>Sign In</span>

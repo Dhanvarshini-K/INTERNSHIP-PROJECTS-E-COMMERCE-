@@ -1,9 +1,9 @@
 import React from 'react'
 import "../SaleUp_card/saleup.scss"
-import { SaleUpList } from '../../Functionality_Data/saleup_data'
+import { saleUpList } from '../../Functionality_Data/saleup_data'
 
 const AboutUs = () => {
-    const RenderDetail = SaleUpList.filter((about)=>{
+    const renderDetail = saleUpList.filter((about)=>{
         return(about.id===2)
     })
     .map((about) => {
@@ -26,7 +26,7 @@ const AboutUs = () => {
 
     return (
         <React.Fragment>
-            {RenderDetail}
+            {renderDetail}
         </React.Fragment>
     )
 }

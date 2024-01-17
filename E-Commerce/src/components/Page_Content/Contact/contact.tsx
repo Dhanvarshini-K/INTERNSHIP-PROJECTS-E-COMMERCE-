@@ -7,10 +7,55 @@ import {
 } from '../../../assets/resources/icons';
 import AboutUs from '../../Common_Functionality/SaleUp_Card/aboutus';
 import CardItem from '../../Common_Functionality/Service_Card/card';
+import { useRef } from 'react';
+import { ID } from 'appwrite';
+import { databases } from '../../../appwriteConfig';
 
+interface FormData {
+    nameInput: string;
+    emailInput: string;
+    messageInput: string;
+  }
+const Contact  = () => {
 
-
-const Contact = () => {
+       const nameRef = useRef(null);
+       const emailRef = useRef(null);
+       const messageRef = useRef(null);
+      
+    
+      
+        const handleSubmit = async (e: any) => {
+          e.preventDefault();
+      
+          try {
+            const formData : FormData = {
+                nameInput : nameRef.current.value,
+                emailInput : emailRef.current.value,
+                messageInput : messageRef.current.value
+            }
+            const promise = databases.createDocument(
+                '659681feb0c97e65e766',
+                '65a685d940dc9e145472',
+                ID.unique(),
+                {
+                   "FullName" : formData.nameInput,
+                   "Email" : formData.emailInput,
+                   "Message" : formData.messageInput,
+                }
+            )
+      
+            console.log('Document created:', promise);
+            nameRef.current.value ='';
+            emailRef.current.value= '';
+            messageRef.current.value = ''
+            // Handle success, show confirmation message, etc.
+          } catch (error) {
+            console.error('Error creating document:', error);
+            // Handle error, show error message, etc.
+          }
+        };
+      
+       
     return (
 
         <>
@@ -62,18 +107,20 @@ const Contact = () => {
             <section className='container text-center mb-4'>
                 <div className='row d-flex gap-3'>
                     <div className='col-12 col-md-4'>
-                        <form className="d-flex flex-column gap-4">
+                        <form className="d-flex flex-column gap-4" onSubmit={handleSubmit}>
                             <div className="form-group d-flex flex-column align-items-start gap-2">
                                 <label className="fw-medium">FULL NAME</label>
-                                <input type="text" className="form-control w-100 shadow-none" placeholder="Your Name" />
+                                <input type="text" className="form-control w-100 shadow-none" placeholder="Your Name" ref={nameRef}
+            />
                             </div>
                             <div className="form-group d-flex flex-column align-items-start gap-2">
                                 <label className="fw-medium">EMAIL ADDRESS</label>
-                                <input type="email" className="form-control shadow-none" id="exampleInputPassword1" placeholder="Password" />
+                                <input type="email" className="form-control shadow-none" id="exampleInputPassword1" placeholder="Email" ref={emailRef}/>
                             </div>
                             <div className="form-group d-flex flex-column align-items-start gap-2">
                                 <label className="fw-medium">MESSAGE</label>
-                                <input type="text" className="form-control message_field shadow-none" />
+                                <input type="text" className="form-control message_field shadow-none" name='message'  ref={messageRef}
+            />
                             </div>
                             <button type="submit" className="btn btn-primary">Send Message</button>
                         </form>

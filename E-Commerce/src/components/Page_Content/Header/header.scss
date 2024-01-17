@@ -11,4 +11,18 @@
     font-size: 14px;
 }
 
+.nav-link:hover,
+.nav-link:active{
+    color: black !important;
+    font-weight: bold;
+}
+.cart_count{
+    width: 22px;
+    height: 22px;
+}
+.nav-link.active{
+    color: black;
+    font-weight: bold;
+}
+
 

@@ -5,9 +5,9 @@ const Address = () => {
     <section className="container p-4 ">
       <div className="row d-flex gap-5">
         <span className="h1 fw-bold text-center">My Account</span>
-        <div className="col-lg-3 col-md-4 col-sm-12">
+        {/* <div className="col-lg-3 col-md-4 col-sm-12">
           <AccountProfile />
-        </div>
+        </div> */}
         <div className="col-md-7 d-flex gap-3 flex-column mt-4">
           <span className="h4 fw-bold">Address</span>
           <div className="d-flex gap-3 flex-wrap flex-lg-nowrap">

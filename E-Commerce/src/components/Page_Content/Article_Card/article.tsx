@@ -2,11 +2,11 @@ import React from "react";
 import "../Article_Card/article.scss";
 import { arrow_right_icon } from "../../../assets/resources/icons";
 import { Link } from "react-router-dom";
-import { ArticleItem } from "../../Functionality_Data/article_card";
+import { articleItem } from "../../Functionality_Data/article_card";
 
 const ArticleMain = () => {
 
-    const RenderArticle = ArticleItem.filter((article:any) => {
+    const renderArticle = articleItem.filter((article:any) => {
         return (article.id <= 3)
     }).map((article:any) => {
         return (
@@ -35,7 +35,7 @@ const ArticleMain = () => {
                     </div>
                 </div>
                 <div className="article_list container d-flex gap-3 justify-content-between p-3 flex-wrap flex-md-nowrap">
-                    {RenderArticle}
+                    {renderArticle}
                 </div>
             </section>
         </React.Fragment>

@@ -70,5 +70,5 @@ export {default as support_icon} from "../icons/support_icon.svg"
 export {default as cart_one_dark} from "../icons/cart_one_dark.svg";
 export {default as cart_two_light} from "../icons/cart_two_light.svg"
 export {default as cart_three_light} from "../icons/cart_three_light.svg"
-
+export {default as paycard} from "../icons/paycard.svg"
 

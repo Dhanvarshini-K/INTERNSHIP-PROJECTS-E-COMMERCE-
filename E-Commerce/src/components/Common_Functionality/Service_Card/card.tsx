@@ -1,7 +1,7 @@
 import { cardList } from "../../Functionality_Data/service_card";
 import "../Service_Card/card.scss";
 const CardItem = () => {
-    const RenderCard = cardList.map((cards) => {
+    const renderCard = cardList.map((cards) => {
         return (
             <section className=" card card-body bg-light d-flex flex-column align-items-center border-0 py-3 px-2">
                
@@ -13,7 +13,7 @@ const CardItem = () => {
     })
     return (
         <section className="customer_service container d-flex justify-content-between gap-3 align-self-center align-items-center flex-wrap p-4">
-            {RenderCard}
+            {renderCard}
         </section>
     )
 }
