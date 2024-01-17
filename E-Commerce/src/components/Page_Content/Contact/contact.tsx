@@ -10,6 +10,8 @@ import CardItem from "../../Common_Functionality/Service_Card/card";
 import { useRef } from "react";
 import { ID } from "appwrite";
 import { databases } from "../../../appwriteConfig";
+import { ToastContainer,toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface FormData {
   nameInput: string;
@@ -42,6 +44,7 @@ const Contact = () => {
       );
 
       console.log("Document created:", promise);
+      toast.success("Successfully Sent");
       nameRef.current.value = "";
       emailRef.current.value = "";
       messageRef.current.value = "";
@@ -129,15 +132,16 @@ const Contact = () => {
               </div>
               <div className="form-group d-flex flex-column align-items-start gap-2">
                 <label className="fw-medium">MESSAGE</label>
-                <input
-                  type="text"
+                <textarea         
                   className="form-control message_field shadow-none"
                   name="message"
+                  placeholder="Message"
                   ref={messageRef}
                 />
               </div>
               <button type="submit" className="btn btn-primary">
                 Send Message
+                <ToastContainer/>
               </button>
             </form>
           </div>

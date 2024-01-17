@@ -1,5 +1,6 @@
 //signIn Icons
-export {default as hide_password} from "../icons/hide_password_icons.png"
+export {default as hide_password} from "../icons/hide_password_icon.png"
+export {default as open_password} from "../icons/open_password_icons.png"
 
 //home Icons
 

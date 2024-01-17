@@ -1,14 +1,14 @@
 import "../Form/form.scss";
-import { hide_password } from "../../../assets/resources/icons";
+import { hide_password,open_password } from "../../../assets/resources/icons";
 import { Sign_img } from "../../../assets/resources/images";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../utils/AuthContext";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const SignIn = () => {
   const { user, loginUser } = useAuth();
   const signInForm = useRef(null);
-
+  const [showPassword, setShowPassword] = useState(false);
   const handleSignInSubmit = (e: any) => {
     e.preventDefault();
     const email = signInForm.current.email.value;
@@ -53,17 +53,22 @@ const SignIn = () => {
 
               <div className="d-flex align-items-center mb-3 border-bottom">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   className="form-control border-0  shadow-none"
                   placeholder="Password"
                   name="password"
                   required
                 />
-                <img
-                  src={hide_password}
-                  alt="hide_password"
-                  className="hide_password"
-                />
+                <button
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="border-0 bg-transparent"
+                >
+                  <img
+                    src={showPassword ? hide_password:open_password}
+                    alt="hide_password"
+                    className="hide_password"
+                  />
+                </button>
               </div>
 
               <div className=" d-flex justify-content-between align-items-baseline mb-3">

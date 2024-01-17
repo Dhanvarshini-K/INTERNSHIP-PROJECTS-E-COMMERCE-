@@ -3,10 +3,16 @@ import AccountProfile from "../../components/Page_Content/Account/account_profil
 
 const AccountPage = () => {
   return (
-    <div>
+    <section className="container p-4">
+
+    <div className="row">
+      <div className="col-md-4 col-sm-12">
       <AccountProfile />
+      </div>
       <AccountDetails />
     </div>
+    </section>
+
   );
 };
 
