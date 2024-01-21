@@ -24,6 +24,7 @@ interface productList {
   actual_price: String;
   discount_price: String;
   category: String;
+  color:String
 }
 export const productList = [
   {
@@ -34,8 +35,9 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Loveseat Sofa",
-    actual_price: "$199.00",
-    discount_price: "$400.00",
+    actual_price: "199.00",
+    discount_price: "400.00",
+    color:"White"
   },
   {
     id: 2,
@@ -44,9 +46,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Luxury Sofa",
-    actual_price: "$299.00",
-    discount_price: "$500.00",
+    actual_price: "299.00",
+    discount_price: "500.00",
     category: "Livingroom",
+    color:"White"
   },
   {
     id: 3,
@@ -55,8 +58,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
+    discount_price: "",
     category: "Livingroom",
+    color:"White"
   },
   {
     id: 4,
@@ -65,8 +70,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Cozy Sofa",
-    actual_price: "$299.00",
+    actual_price: "299.00",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
   },
   {
     id: 5,
@@ -75,8 +82,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "White Drawer Unit",
-    actual_price: "$89.99",
+    actual_price: "89.99",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
+
   },
   {
     id: 6,
@@ -85,8 +95,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Tray table",
-    actual_price: "$19.99",
+    actual_price: "19.99",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
   },
   {
     id: 7,
@@ -95,8 +107,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
   },
   {
     id: 8,
@@ -105,8 +119,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Brow side table",
-    actual_price: "$16.99",
+    actual_price: "16.99",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
   },
   {
     id: 9,
@@ -115,8 +131,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Light Beige Pillow",
-    actual_price: "$3.99",
+    actual_price: "3.99",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
   },
   {
     id: 10,
@@ -125,8 +143,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$39.99",
+    actual_price: "39.99",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
   },
   {
     id: 11,
@@ -137,6 +157,8 @@ export const productList = [
     product_title: "Bamboo basket",
     actual_price: "$9.99",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
   },
   {
     id: 12,
@@ -145,8 +167,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Off-white Pillow",
-    actual_price: "$7.99",
+    actual_price: "7.99",
     category: "Livingroom",
+    discount_price: "",
+    color:"White"
   },
   {
     id: 13,
@@ -155,9 +179,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Loveseat Sofa",
-    actual_price: "$199.00",
-    discount_price: "$400.00",
+    actual_price: "199.00",
+    discount_price: "400.00",
     category: "Bedroom",
+       color:"White"
   },
   {
     id: 14,
@@ -166,9 +191,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Luxury Sofa",
-    actual_price: "$299.00",
-    discount_price: "$500.00",
+    actual_price: "299.00",
+    discount_price: "500.00",
     category: "Bedroom",
+       color:"White",
+
   },
   {
     id: 15,
@@ -177,8 +204,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 16,
@@ -187,8 +217,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Cozy Sofa",
-    actual_price: "$299.00",
+    actual_price: "299.00",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 17,
@@ -197,8 +230,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "White Drawer Unit",
-    actual_price: "$89.99",
+    actual_price: "89.99",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 18,
@@ -207,8 +243,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Tray table",
-    actual_price: "$19.99",
+    actual_price: "19.99",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 19,
@@ -217,8 +256,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 20,
@@ -227,8 +269,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Brow side table",
-    actual_price: "$16.99",
+    actual_price: "16.99",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 21,
@@ -237,8 +282,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Light Beige Pillow",
-    actual_price: "$3.99",
+    actual_price: "3.99",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 22,
@@ -247,8 +295,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$39.99",
+    actual_price: "39.99",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 23,
@@ -257,8 +308,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Bamboo basket",
-    actual_price: "$9.99",
+    actual_price: "9.99",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
   {
     id: 24,
@@ -267,8 +321,11 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Off-white Pillow",
-    actual_price: "$7.99",
+    actual_price: "7.99",
     category: "Bedroom",
+       color:"White",
+    discount_price: "",
+
   },
 
   {
@@ -278,9 +335,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Loveseat Sofa",
-    actual_price: "$199.00",
-    discount_price: "$400.00",
+    actual_price: "199.00",
+    discount_price: "400.00",
     category: "Kitchen",
+
   },
   {
     id: 26,
@@ -289,8 +347,8 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Luxury Sofa",
-    actual_price: "$299.00",
-    discount_price: "$500.00",
+    actual_price: "299.00",
+    discount_price: "500.00",
     category: "Kitchen",
   },
   {
@@ -300,8 +358,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 28,
@@ -310,8 +370,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Cozy Sofa",
-    actual_price: "$299.00",
+    actual_price: "299.00",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 29,
@@ -320,8 +382,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "White Drawer Unit",
-    actual_price: "$89.99",
+    actual_price: "89.99",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 30,
@@ -330,8 +394,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Tray table",
-    actual_price: "$19.99",
+    actual_price: "19.99",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 31,
@@ -340,8 +406,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 32,
@@ -350,8 +418,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Brow side table",
-    actual_price: "$16.99",
+    actual_price: "16.99",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 33,
@@ -360,8 +430,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Light Beige Pillow",
-    actual_price: "$3.99",
+    actual_price: "3.99",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 34,
@@ -370,8 +442,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$39.99",
+    actual_price: "39.99",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 35,
@@ -380,8 +454,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Bamboo basket",
-    actual_price: "$9.99",
+    actual_price: "9.99",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 36,
@@ -390,8 +466,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Off-white Pillow",
-    actual_price: "$7.99",
+    actual_price: "7.99",
     category: "Kitchen",
+    discount_price: "",
+
   },
   {
     id: 37,
@@ -400,9 +478,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Loveseat Sofa",
-    actual_price: "$199.00",
-    discount_price: "$400.00",
+    actual_price: "199.00",
+    discount_price: "400.00",
     category: "Bathroom",
+
   },
   {
     id: 38,
@@ -411,9 +490,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Luxury Sofa",
-    actual_price: "$299.00",
-    discount_price: "$500.00",
+    actual_price: "299.00",
+    discount_price: "500.00",
     category: "Bathroom",
+
   },
   {
     id: 39,
@@ -422,8 +502,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 40,
@@ -432,8 +514,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Cozy Sofa",
-    actual_price: "$299.00",
+    actual_price: "299.00",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 41,
@@ -442,8 +526,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "White Drawer Unit",
-    actual_price: "$89.99",
+    actual_price: "89.99",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 42,
@@ -452,8 +538,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Tray table",
-    actual_price: "$19.99",
+    actual_price: "19.99",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 43,
@@ -462,8 +550,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 44,
@@ -472,8 +562,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Brow side table",
-    actual_price: "$16.99",
+    actual_price: "16.99",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 45,
@@ -482,8 +574,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Light Beige Pillow",
-    actual_price: "$3.99",
+    actual_price: "3.99",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 46,
@@ -492,8 +586,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$39.99",
+    actual_price: "39.99",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 47,
@@ -502,8 +598,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Bamboo basket",
-    actual_price: "$9.99",
+    actual_price: "9.99",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 48,
@@ -512,8 +610,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Off-white Pillow",
-    actual_price: "$7.99",
+    actual_price: "7.99",
     category: "Bathroom",
+    discount_price: "",
+
   },
   {
     id: 49,
@@ -522,9 +622,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Loveseat Sofa",
-    actual_price: "$199.00",
-    discount_price: "$400.00",
+    actual_price: "199.00",
+    discount_price: "400.00",
     category: "Dinning",
+
   },
   {
     id: 50,
@@ -533,8 +634,8 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Luxury Sofa",
-    actual_price: "$299.00",
-    discount_price: "$500.00",
+    actual_price: "299.00",
+    discount_price: "500.00",
     category: "Dinning",
   },
   {
@@ -544,8 +645,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 52,
@@ -554,8 +657,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Cozy Sofa",
-    actual_price: "$299.00",
+    actual_price: "299.00",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 53,
@@ -564,8 +669,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "White Drawer Unit",
-    actual_price: "$89.99",
+    actual_price: "89.99",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 54,
@@ -574,8 +681,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Tray table",
-    actual_price: "$19.99",
+    actual_price: "19.99",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 55,
@@ -584,8 +693,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 56,
@@ -594,8 +705,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Brow side table",
-    actual_price: "$16.99",
+    actual_price: "16.99",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 57,
@@ -604,8 +717,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Light Beige Pillow",
-    actual_price: "$3.99",
+    actual_price: "3.99",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 58,
@@ -614,8 +729,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$39.99",
+    actual_price: "39.99",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 59,
@@ -624,8 +741,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Bamboo basket",
-    actual_price: "$9.99",
+    actual_price: "9.99",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 60,
@@ -634,8 +753,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Off-white Pillow",
-    actual_price: "$7.99",
+    actual_price: "7.99",
     category: "Dinning",
+    discount_price: "",
+
   },
   {
     id: 61,
@@ -644,9 +765,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Loveseat Sofa",
-    actual_price: "$199.00",
-    discount_price: "$400.00",
+    actual_price: "199.00",
+    discount_price: "400.00",
     category: "Outdoor",
+
   },
   {
     id: 62,
@@ -655,8 +777,8 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Luxury Sofa",
-    actual_price: "$299.00",
-    discount_price: "$500.00",
+    actual_price: "299.00",
+    discount_price: "500.00",
     category: "Outdoor",
   },
   {
@@ -666,8 +788,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 64,
@@ -676,8 +800,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Cozy Sofa",
-    actual_price: "$299.00",
+    actual_price: "299.00",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 65,
@@ -686,8 +812,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "White Drawer Unit",
-    actual_price: "$89.99",
+    actual_price: "89.99",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 66,
@@ -696,8 +824,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Tray table",
-    actual_price: "$19.99",
+    actual_price: "19.99",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 67,
@@ -706,8 +836,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$19.00",
+    actual_price: "19.00",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 68,
@@ -716,8 +848,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Black Brow side table",
-    actual_price: "$16.99",
+    actual_price: "16.99",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 69,
@@ -726,8 +860,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Light Beige Pillow",
-    actual_price: "$3.99",
+    actual_price: "3.99",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 70,
@@ -736,8 +872,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Table Lamp",
-    actual_price: "$39.99",
+    actual_price: "39.99",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 71,
@@ -746,8 +884,10 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Bamboo basket",
-    actual_price: "$9.99",
+    actual_price: "9.99",
     category: "Outdoor",
+    discount_price: "",
+
   },
   {
     id: 72,
@@ -756,7 +896,9 @@ export const productList = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Off-white Pillow",
-    actual_price: "$7.99",
+    actual_price: "7.99",
     category: "Outdoor",
+    discount_price: "",
+
   },
 ];

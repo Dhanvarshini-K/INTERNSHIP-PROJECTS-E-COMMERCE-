@@ -1,11 +1,10 @@
-import React from "react";
-import { arrow_right_icon } from "../../../assets/resources/icons";
+import { chevron_right_icon } from "../../../assets/resources/icons";
 
 const BreadCrums = (props: any) => {
   const { product } = props;
   return (
-    <div>
-      Home <img src={arrow_right_icon} alt="right_icon" /> Product
+    <div className="container p-3">
+      Home <img src={chevron_right_icon} alt="right_icon" /> Shop <img src={chevron_right_icon} alt="" /> {product.category} <img src={chevron_right_icon} alt="" /> {product.product_title}
     </div>
   );
 };

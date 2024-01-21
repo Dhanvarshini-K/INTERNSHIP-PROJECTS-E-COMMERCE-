@@ -1,0 +1,14 @@
+@import "../../Scss/main.scss";
+
+.account_profile {
+    background-color: $light;
+}
+// .horizontal_line {
+//     background-color: $black;
+//     width:300px;
+//     border-bottom: 1px solid $black;
+// }
+.links.active{
+    border-bottom: 1px solid $black;
+    width: 300px;
+}

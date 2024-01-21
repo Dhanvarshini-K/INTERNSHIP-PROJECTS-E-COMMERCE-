@@ -1,13 +1,15 @@
-import { hide_password } from "../../../assets/resources/icons";
+import { hide_password,open_password } from "../../../assets/resources/icons";
 import { Sign_img } from "../../../assets/resources/images";
 import { Link } from "react-router-dom";
 import "../Form/form.scss";
 import { useAuth } from "../../../utils/AuthContext";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const SignUp = () => {
   const { registerUser } = useAuth();
   const signupForm = useRef(null);
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const name = signupForm.current.name.value;
@@ -66,17 +68,22 @@ const SignUp = () => {
               </div>
               <div className="d-flex align-items-center mb-3 border-bottom">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   className="form-control border-0  shadow-none"
                   placeholder="Password"
                   name="password"
                   required
                 />
-                <img
-                  src={hide_password}
-                  alt="hide_password"
-                  className="hide_password"
-                />
+                <button
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="border-0 bg-transparent"
+                >
+                  <img
+                     src={showPassword ? hide_password:open_password}
+                     alt="hide_password"
+                     className="hide_password"
+                  />
+                </button>
               </div>
               <div className=" d-flex justify-content-between align-items-baseline mb-3">
                 <div className="custom-control custom-checkbox d-flex gap-2 align-items-center">

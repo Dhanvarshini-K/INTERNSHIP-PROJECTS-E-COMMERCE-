@@ -36,9 +36,9 @@ const HomePageMain = () => {
           <div className="carousel-item active d-flex flex-column ps-5 pt-4">
             <span className="text-dark fw-bold h2">Living Room</span>
             <div className="link border-bottom border-dark">
-              <a href="#" className="fw-bold text-decoration-none text-dark">
+              <Link to="/livingroom" className="fw-bold text-decoration-none text-dark">
                 Shop Now
-              </a>
+              </Link>
               <img src={arrow_right_icon} alt="arrow_right" />
             </div>
           </div>
@@ -54,9 +54,9 @@ const HomePageMain = () => {
             <div className="carousel-item active pt-4 ps-4 ">
               <span className="text-dark fw-bold h2">BedRoom</span>
               <div className="link border-bottom border-dark">
-                <a href="#" className="fw-bold text-decoration-none text-dark">
+                <Link to="/bedroom" className="fw-bold text-decoration-none text-dark">
                   Shop Now
-                </a>
+                </Link>
                 <img src={arrow_right_icon} alt="arrow_right" />
               </div>
             </div>
@@ -70,9 +70,9 @@ const HomePageMain = () => {
             <div className="carousel-item active pt-4 ps-4">
               <span className="text-dark fw-bold h2">Kitchen</span>
               <div className="link border-bottom border-dark">
-                <a href="#" className="fw-bold text-decoration-none text-dark">
+                <Link to="/kitchen" className="fw-bold text-decoration-none text-dark">
                   Shop Now
-                </a>
+                </Link>
                 <img src={arrow_right_icon} alt="arrow_right" />
               </div>
             </div>

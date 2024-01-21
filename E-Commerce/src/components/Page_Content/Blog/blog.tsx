@@ -10,6 +10,7 @@ import {
 } from "../../../assets/resources/icons";
 
 import ArticleList from "../../Common_Functionality/Article_Card/articleList";
+import { Link } from "react-router-dom";
 
 const BlogMain = () => {
   const [showMore, setShowMore] = useState<Boolean>(false);
@@ -34,13 +35,13 @@ const BlogMain = () => {
       <section className="blog_image py-5 px-3 pt-xs-5">
         <div className="carousel-item active d-flex flex-column align-items-center  gap-2 mt-lg-5">
           <div className="carosel_caption fw-medium d-flex gap-3">
-            <a href="#" className="text-decoration-none text-dark fw-bold">
+            <Link to="/home" className="text-decoration-none text-dark fw-bold">
               Home
-            </a>
+            </Link>
             <img src={chevron_right_icon} alt="chevron_right_icon" />
-            <a href="#" className="text-decoration-none text-dark fw-bold">
+            <Link to="/blog" className="text-decoration-none text-dark fw-bold">
               Blog
-            </a>
+            </Link>
           </div>
           <span className="h1 fw-bold">Our Blog</span>
           <p>Home ideas and design inspiration</p>

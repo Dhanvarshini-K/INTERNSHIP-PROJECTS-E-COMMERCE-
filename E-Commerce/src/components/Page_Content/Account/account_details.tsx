@@ -1,10 +1,7 @@
-import "../Account/account.scss";
-
+import "../../Page_Content/Account/account_details.scss"
 const AccountDetails = () => {
   return (
-      <div className="d-flex gap-5">
-        <span className="h1 fw-bold text-center">My Account</span>   
-        <div className="d-flex gap-3 flex-column">
+        <div className="d-flex gap-3 flex-column pt-4">
           <span className="h4 fw-bold">Account Details</span>
           <form className="myform d-flex  flex-column gap-3">
             <div className="form-group required d-flex flex-column gap-2">
@@ -85,7 +82,6 @@ const AccountDetails = () => {
             Save changes
           </button>
         </div>
-      </div>
   );
 };
 

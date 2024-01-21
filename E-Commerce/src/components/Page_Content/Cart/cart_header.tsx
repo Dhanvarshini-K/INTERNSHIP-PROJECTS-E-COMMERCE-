@@ -4,8 +4,7 @@ import {
   cart_three_light,
 } from "../../../assets/resources/icons";
 import { Link } from "react-router-dom";
-import "../Cart/cart_page.scss";
-
+import "../../Page_Content/Cart/cart_header.scss"
 const CartHeader = () => {
   return (
     <section className="d-flex flex-column gap-3">

@@ -45,6 +45,7 @@ const ShopCategory = (props: { category: string }) => {
     gridHeadingReducer,
     false
   );
+  const location = useLocation();
   const shoplocation = useLocation();
   const { hash, pathname, search } = shoplocation;
   const { productList } = useContext(ShopContext);
@@ -80,33 +81,75 @@ const ShopCategory = (props: { category: string }) => {
             <div className="col-lg-2 col-md-3 py-2 d-flex flex-column gap-4">
               <div className="filter_container d-flex align-items-start gap-2">
                 <img src={filter_icon} alt="filter" />
-                <span className="h4 fw-bold">Filter</span>
+                <button className="border-0 bg-transparent" >
+                  <span className="h4 fw-bold">Filter</span>
+                </button>
               </div>
               <div className="d-none d-md-block d-md-flex flex-md-column gap-3">
                 <span className="h4 fw-bold">CATEGORIES</span>
-                <div className="categories_list navbar d-flex flex-column align-items-start fw-medium fs-5 gap-2 flex-nowrap pb-5">
-                  <Link className="nav-link" to="/allrooms">
-                    All Rooms
-                  </Link>
-                  <Link className="nav-link" to="/livingroom">
-                    Living Room
-                  </Link>
-                  <Link className="nav-link" to="/bedroom">
-                    Bedroom
-                  </Link>
-                  <Link className="nav-link" to="/kitchen">
-                    Kitchen
-                  </Link>
-                  <Link className="nav-link" to="/bathroom">
-                    Bathroom
-                  </Link>
-                  <Link className="nav-link" to="/dinning">
-                    Dinning
-                  </Link>
-                  <Link className="nav-link" to="/outdoor">
-                    Outdoor
-                  </Link>
-                </div>
+            
+                  <div className="categories_list navbar d-flex flex-column align-items-start fw-medium fs-5 gap-2 flex-nowrap pb-5">
+                    <Link
+                      className={`nav-link  ${
+                        location.pathname === "/allrooms" ||
+                        location.pathname === "/shop"
+                          ? "active"
+                          : ""
+                      }`}
+                      to="/allrooms"
+                    >
+                      All Rooms
+                    </Link>
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/livingroom" ? "active" : ""
+                      }`}
+                      to="/livingroom"
+                    >
+                      Living Room
+                    </Link>
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/bedroom" ? "active" : ""
+                      }`}
+                      to="/bedroom"
+                    >
+                      Bedroom
+                    </Link>
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/kitchen" ? "active" : ""
+                      }`}
+                      to="/kitchen"
+                    >
+                      Kitchen
+                    </Link>
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/bathroom" ? "active" : ""
+                      }`}
+                      to="/bathroom"
+                    >
+                      Bathroom
+                    </Link>
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/dinning" ? "active" : ""
+                      }`}
+                      to="/dinning"
+                    >
+                      Dinning
+                    </Link>
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/outdoor" ? "active" : ""
+                      }`}
+                      to="/outdoor"
+                    >
+                      Outdoor
+                    </Link>
+                  </div>
+              
                 <span className="h4 fw-bold">PRICE</span>
                 <div className="d-flex flex-column gap-3 ">
                   <div className="form-check-inline  d-flex justify-content-between">
@@ -182,7 +225,7 @@ const ShopCategory = (props: { category: string }) => {
 
           <div className="col-lg-10 col-md-9 d-flex flex-column gap-2 py-2 ">
             <div className="shoplist_container px-3 gap-2 flex-wrap">
-              <div className="sortby_container d-flex justify-content-between">
+              <div className="sortby_container d-flex justify-content-between flex-xs-wrap flex-md-nowrap">
                 {!gridHeading && (
                   <span className="livingroom_container h2 fw-bold">
                     {pathname === "/allrooms" || pathname === "/shop"
@@ -191,14 +234,14 @@ const ShopCategory = (props: { category: string }) => {
                   </span>
                 )}
                 {gridHeading && (
-                  <section className="container d-flex gap-4 ps-5">
+                  <section className="container d-flex gap-4 ps-5 flex-wrap">
                     <div className="d-flex flex-column">
                       <span className="h5 text-secondary fw-bold">
                         Categories
                       </span>
                       <select className="p-1 rounded shadow-none">
-                        <option value="/allrooms">AllRooms</option>
-                        <option value="/livingroom">Living Room</option>
+                        <option>AllRooms</option>
+                        <option>Living Room</option>
                         <option>BedRoom</option>
                         <option>Kitchen</option>
                         <option>BathRoom</option>

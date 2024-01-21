@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <>
       <HomePageMain />
-      <div className="product container">
+      <div className="product container ">
         <HomeProduct />
       </div>
       <CardItem />

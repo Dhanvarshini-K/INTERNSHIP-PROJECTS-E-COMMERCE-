@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <div className="newsletter_container">
+      <div className="newsletter_container mt-3">
         <div className="newsletter_content d-flex flex-column  align-items-center py-4 px-2 justify-content-center">
           <span className="h3">Join Our Newsletter</span>
           <p className="text-center">

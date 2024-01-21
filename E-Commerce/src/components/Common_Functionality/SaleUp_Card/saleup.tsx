@@ -1,6 +1,7 @@
 import React from "react";
 import "./saleup.scss";
 import { saleUpList } from "../../Functionality_Data/saleup_data";
+import { Link } from "react-router-dom";
 
 const SaleUpMain = () => {
   const renderSaleUp = saleUpList
@@ -20,9 +21,9 @@ const SaleUpMain = () => {
             <span className="h2 fw-bold">{sale.title}</span>
             <p>{sale.description}</p>
             <div className="sale_up_link border-bottom border-dark">
-              <a href="#" className="text-decoration-none text-dark fw-bold">
+              <Link to="/shop" className="text-decoration-none text-dark fw-bold">
                 {sale.link}
-              </a>
+              </Link>
               <img src={sale.icons} alt="arrow_right_icon" />
             </div>
           </div>
@@ -31,6 +32,7 @@ const SaleUpMain = () => {
     });
   return (
     <React.Fragment>
+      <h1>hello</h1>
       <div>{renderSaleUp}</div>
     </React.Fragment>
   );

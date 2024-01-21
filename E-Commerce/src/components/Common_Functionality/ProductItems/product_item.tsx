@@ -1,9 +1,13 @@
-import { useState } from "react";
-import { addwishlist_icon } from "../../../assets/resources/icons";
+import { useContext, useState } from "react";
+import { addwishlist_icon,wishlist_like } from "../../../assets/resources/icons";
 import "../../Common_Functionality/ProductItems/product_item.scss";
-
+import { Link } from "react-router-dom";
+import { ShopContext } from "../../Page_Content/Context/shopContext";
 const Item = (props: any) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const[likeWishList,setLikeWishList] = useState(false);
+  const {addToCart} = useContext(ShopContext);
+  const {addToWishList} = useContext (ShopContext);
 
   return (
     <>
@@ -15,12 +19,14 @@ const Item = (props: any) => {
           onMouseOut={() => setSelectedImage(null)}
         >
           <div className="product_image_container">
-            <img
-              src={props.image}
-              alt="product_image"
-              className="product_image"
-              style={{ width: "-webkit-fill-available" }}
-            />
+            <Link to={`/product/${props.id}`}>
+              <img
+                src={props.image}
+                alt="product_image"
+                className="product_image"
+                style={{ width: "-webkit-fill-available" }}
+              />
+            </Link>
             <div className="product_discount carousel-item active d-flex justify-content-between pt-3 ps-3">
               <div className="d-flex flex-column">
                 <span className="h6 bg-white px-2 py-1 rounded-1 text-dark ">
@@ -31,15 +37,27 @@ const Item = (props: any) => {
                 </span>
               </div>
               <div>
-                {selectedImage === props.id && (
+                {selectedImage === props.id && likeWishList ? (
+                  
+                  <button className="border-0 bg-transparent">
+                  <img src={wishlist_like} alt="addwishlist_icon" className="wishlist_like" />
+                  </button>
+                ):(
+                  <button className="border-0 bg-transparent" onClick={()=>{
+                    addToWishList(props.id);
+                  setLikeWishList(true);
+                  setSelectedImage(props.id);
+                }
+                  }>
                   <img src={addwishlist_icon} alt="addwishlist_icon" />
+                  </button>
                 )}
               </div>
             </div>
           </div>
           <div className="add_to_cart carousel-item active d-flex justify-content-center">
             {selectedImage === props.id && (
-              <button className=" cart_button btn btn-dark ">
+              <button className=" cart_button btn btn-dark " onClick={()=>{addToCart(props.id)}} >
                 Add to Cart
               </button>
             )}

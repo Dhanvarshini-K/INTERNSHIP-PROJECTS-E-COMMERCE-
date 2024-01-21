@@ -12,11 +12,16 @@ import {
   ham_facebook_icon,
   ham_youtube_icon,
 } from "../../../assets/resources/icons";
-import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { ShopContext } from "../Context/shopContext";
+
 const Header = () => {
+
   const [openSearch, setOpenSearch] = useState(false);
   const location = useLocation();
+  const {getTotalCartItems} = useContext(ShopContext);
+
 
   return (
     <>
@@ -45,7 +50,7 @@ const Header = () => {
         </div>
       </section>
 
-      <nav className="navbar navbar-expand-md">
+      <nav className="navbar navbar-expand-md sticky-top bg-white">
         <div className="container">
           <div>
             <button
@@ -81,7 +86,7 @@ const Header = () => {
               />
             </button>
             <button className="border-0 bg-transparent">
-              <Link to="/account">
+              <Link to="/user/account">
                 <img
                   src={account_icon}
                   alt="account_icon"
@@ -99,7 +104,7 @@ const Header = () => {
                   className="img-fluid"
                 />
                 <div className="cart_count bg-dark rounded-circle text-white fw-medium  text-center d-flex justify-content-center align-items-center">
-                  0
+                  {getTotalCartItems()}
                 </div>
               </Link>
             </button>
@@ -139,7 +144,7 @@ const Header = () => {
 
               <div className="d-flex flex-column gap-1 justify-content-center">
                 <div className="offcanvas-body d-flex justify-content-sm-start justify-content-md-center">
-                  <ul className="navbar-nav justify-content-start flex-grow-3 fs-6 fw-medium">
+                  <ul className="navbar-nav justify-content-start flex-grow-3 fs-6 fw-medium position-sticky">
                     <li className="nav-item">
                       <Link
                         to="/home"
@@ -166,11 +171,10 @@ const Header = () => {
                     <div className="vertical_line d-md-none d-sm-block border-1 border-bottom"></div>
                     <li className="nav-item">
                       <Link
-                        to="/product"
+                       to="/productPage"
                         aria-current="page"
                         className={`nav-link ${
-                          location.pathname === "/product" ? "active" : ""
-                        }`}
+                          location.pathname === "/product" ? "active" : "" }`}
                       >
                         Product
                       </Link>

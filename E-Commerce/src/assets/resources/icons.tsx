@@ -23,6 +23,7 @@ export {default as first_page_fourth_icon} from "../icons/first_page_fourth_icon
 export {default as star} from "../icons/star_icons.svg"
 export {default as heart_icon} from "../icons/heart_icon.svg"
 export {default as addwishlist_icon} from "../icons/addwishlist_icon.svg"
+export {default as wishlist_like} from "../icons/wishlist_like.png"
 
 
 //contact Icons
@@ -72,4 +73,6 @@ export {default as cart_one_dark} from "../icons/cart_one_dark.svg";
 export {default as cart_two_light} from "../icons/cart_two_light.svg"
 export {default as cart_three_light} from "../icons/cart_three_light.svg"
 export {default as paycard} from "../icons/paycard.svg"
+export {default as remove} from "../icons/remove_icon.svg"
+export {default as ticket_percent_light} from "../icons/ticket_percent_light.svg"
 

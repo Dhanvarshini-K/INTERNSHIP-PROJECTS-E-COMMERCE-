@@ -8,15 +8,13 @@ import BlogPage from "./pages/Blog/blog";
 import ContactPage from "./pages/Contact/contact";
 import CartPage from './pages/Cart/cart';
 import AccountPage from './pages/Account/account';
-import Address from './components/Page_Content/Account/address';
 import SignUp from './components/Page_Content/Form/sign_up';
 import Layout from './components/Page_Content/Layout/layout';
 import SignIn from './components/Page_Content/Form/sign_in';
-import OrderHistory from './components/Page_Content/Account/order';
 import { AuthProvider } from './utils/AuthContext';
-import Checkout from './components/Page_Content/Cart/checkout';
 import ShopCategory from './components/Page_Content/ShopCategory/shop_category';
 import ShopPage from './pages/Shop/shop';
+
 
 
 function App() {
@@ -45,10 +43,9 @@ function App() {
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path='/cart' element={<CartPage />} />
-                <Route path='/account' element={<AccountPage />} />
-                <Route path='/address' element={<Address />} />
-                <Route path='/order' element={<OrderHistory />} />
-                <Route path='/checkout' element={<Checkout/>}/>
+                <Route path='/user' element={<AccountPage/>}>
+                  <Route path=':activepage' element={<AccountPage/>}/>
+                </Route>
               </Route>
               </Route>
           </Routes>
