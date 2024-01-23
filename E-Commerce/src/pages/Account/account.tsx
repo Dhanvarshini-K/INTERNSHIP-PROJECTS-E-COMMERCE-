@@ -4,17 +4,18 @@ import Address from "../../components/Page_Content/Account/address";
 import AccountProfile from "../../components/Page_Content/Account/account_profile";
 import OrderHistory from "../../components/Page_Content/Account/order";
 import WishList from "../../components/Page_Content/Account/wishlist";
+import "../../pages/Account/account.scss"
 const AccountPage = () => {
   const { activepage } = useParams();
 
   // alert(activepage)
   return (
-    <section className="container">
+    <section className="accountPage">
       <div className="row">
-        <div className="col-4">
+        <div className="col-lg-5 col-md-6">
           <AccountProfile activepage={activepage} />
         </div>
-        <div className="col-8 ">
+        <div className="col-lg-7 col-md-6">
           {activepage === "account" && <AccountDetails />}
           {activepage === "address" && <Address />}
           {activepage === "order" && <OrderHistory/>}

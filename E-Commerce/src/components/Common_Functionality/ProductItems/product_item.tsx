@@ -7,7 +7,7 @@ const Item = (props: any) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const[likeWishList,setLikeWishList] = useState(false);
   const {addToCart} = useContext(ShopContext);
-  const {addToWishList} = useContext (ShopContext);
+  const {addToWishList,addToWishListByNumber} = useContext (ShopContext);
 
   return (
     <>
@@ -37,7 +37,7 @@ const Item = (props: any) => {
                 </span>
               </div>
               <div>
-                {selectedImage === props.id && likeWishList ? (
+                {likeWishList ? selectedImage === props.id &&  (
                   
                   <button className="border-0 bg-transparent">
                   <img src={wishlist_like} alt="addwishlist_icon" className="wishlist_like" />
@@ -45,6 +45,7 @@ const Item = (props: any) => {
                 ):(
                   <button className="border-0 bg-transparent" onClick={()=>{
                     addToWishList(props.id);
+                    // addToWishListByNumber(props.id);
                   setLikeWishList(true);
                   setSelectedImage(props.id);
                 }

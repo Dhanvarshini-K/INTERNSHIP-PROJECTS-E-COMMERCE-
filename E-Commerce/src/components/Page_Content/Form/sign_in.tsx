@@ -22,9 +22,9 @@ const SignIn = () => {
   return (
     <>
       <div className="container mt-3  flex-md-nowrap">
-        <section className="d-flex justify-content-between flex-wrap flex-md-nowrap">
+        <section className="d-flex justify-content-between flex-wrap flex-md-nowrap gap-3 align-items-center">
           <img src={Sign_img} alt="signin" className="signin_image" />
-          <div className="signin_container mt-3 d-flex flex-column justify-content-lg-center p-1 p-md-4">
+          <div className="signin_container mt-3 d-flex flex-column justify-content-lg-center p-1 p-md-">
             <form
               ref={signInForm}
               onSubmit={handleSignInSubmit}

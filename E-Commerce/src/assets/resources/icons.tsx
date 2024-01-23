@@ -76,3 +76,7 @@ export {default as paycard} from "../icons/paycard.svg"
 export {default as remove} from "../icons/remove_icon.svg"
 export {default as ticket_percent_light} from "../icons/ticket_percent_light.svg"
 
+//article Icons
+
+export {default as article_user} from "../icons/article_user.svg"
+export {default as calendar} from "../icons/calendar.svg"

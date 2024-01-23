@@ -1,10 +1,15 @@
 import React from "react";
 import "../Article_Card/article.scss";
 import { arrow_right_icon } from "../../../assets/resources/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { articleItem } from "../../Functionality_Data/article_card";
 
 const ArticleMain = () => {
+  const navigate = useNavigate();
+
+  const handleArticlePage = (title: string, image: string) => {
+    navigate("/article", { state: [title, image] });
+  };
   const renderArticle = articleItem
     .filter((article: any) => {
       return article.id <= 3;
@@ -16,16 +21,17 @@ const ArticleMain = () => {
             src={article.image}
             alt="home"
             className="img-fluid  mx-auto d-block"
+            onClick={() => handleArticlePage(article.title, article.image)}
           />
           <div className=" d-flex flex-column align-items-center ">
             <span className="h6 fw-bold">{article.title}</span>
             <div className="link d-flex justify-content-center w-50">
-              <a
-                href="#"
-                className="fw-normal text-decoration-none fw-bold border-bottom border-dark text-dark"
+              <button
+                className="fw-normal border-0 bg-transparent fw-bold border-bottom border-dark text-dark"
+                onClick={() => handleArticlePage(article.title, article.image)}
               >
                 {article.link}
-              </a>
+              </button>
               <img src={article.icons} alt="arrow_right" />
             </div>
           </div>

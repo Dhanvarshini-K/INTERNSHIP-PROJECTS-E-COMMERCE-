@@ -22,7 +22,8 @@ const WishList = () => {
             return (
               <tr>
                 <td className="py-3 d-flex gap-2">
-                  <img src={remove} alt="remove" onClick={()=>removeFromWishList(WishList.id)} />
+                  <img src={remove} alt="remove"
+                  onClick={()=>removeFromWishList(WishList.id)} />
                   <img
                     src={WishList.image}
                     alt="wishlist_image"

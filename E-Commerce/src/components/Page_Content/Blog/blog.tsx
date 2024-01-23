@@ -32,21 +32,17 @@ const BlogMain = () => {
 
   return (
     <>
-      <section className="blog_image py-5 px-3 pt-xs-5">
-        <div className="carousel-item active d-flex flex-column align-items-center  gap-2 mt-lg-5">
-          <div className="carosel_caption fw-medium d-flex gap-3">
-            <Link to="/home" className="text-decoration-none text-dark fw-bold">
-              Home
-            </Link>
+    <div className="blog_image">
+        <div className="carousel-item active d-flex flex-column gap-3 ">
+          <div className="blog_link d-flex justify-content-center gap-3 align-items-baseline">
+            <Link to="/home"  className="text-decoration-none text-dark h5 ">Home</Link>
             <img src={chevron_right_icon} alt="chevron_right_icon" />
-            <Link to="/blog" className="text-decoration-none text-dark fw-bold">
-              Blog
-            </Link>
+            <Link to="/blog"  className="text-decoration-none text-dark h5 fw-bold">Blog</Link>
           </div>
-          <span className="h1 fw-bold">Our Blog</span>
-          <p>Home ideas and design inspiration</p>
+          <span className="h1 fw-bold text-center">Our Blog</span>
+          <span className="h4 text-center">Home ideas and design inspiration</span>
         </div>
-      </section>
+      </div>
 
       <section className="container d-flex justify-content-between  p-3">
         <div className=" d-flex d-none d-md-block">

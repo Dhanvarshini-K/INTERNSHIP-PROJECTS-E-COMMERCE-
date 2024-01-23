@@ -10,8 +10,9 @@ import CardItem from "../../Common_Functionality/Service_Card/card";
 import { useRef } from "react";
 import { ID } from "appwrite";
 import { databases } from "../../../appwriteConfig";
-import { ToastContainer,toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 interface FormData {
   nameInput: string;
@@ -43,7 +44,26 @@ const Contact = () => {
         }
       );
 
-      console.log("Document created:", promise);
+      const serviceId = "service_jlreisr";
+      const templateId = "template_9p6gnwi";
+      const publicKey = "KjxJuBgPkz6D0kFf9";
+      const data = {
+        service_id: serviceId,
+        template_id: templateId,
+        user_id: publicKey,
+        template_params: {
+          from_name: formData.nameInput,
+          from_email: formData.emailInput,
+          to_name: "3legant",
+          message: formData.messageInput,
+        },
+      };
+      const mailSentResponse = await axios.post(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        data
+        );
+        console.log("Document created:", promise, '\n', mailSentResponse);
+
       toast.success("Successfully Sent");
       nameRef.current.value = "";
       emailRef.current.value = "";
@@ -132,7 +152,7 @@ const Contact = () => {
               </div>
               <div className="form-group d-flex flex-column align-items-start gap-2">
                 <label className="fw-medium">MESSAGE</label>
-                <textarea         
+                <textarea
                   className="form-control message_field shadow-none"
                   name="message"
                   placeholder="Message"
@@ -141,7 +161,7 @@ const Contact = () => {
               </div>
               <button type="submit" className="btn btn-primary">
                 Send Message
-                <ToastContainer/>
+                <ToastContainer />
               </button>
             </form>
           </div>

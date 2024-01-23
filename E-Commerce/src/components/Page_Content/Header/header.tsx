@@ -7,21 +7,21 @@ import {
   search_icon,
   account_icon,
   cart_icon,
-  wishlist_heart_icon,
   ham_instagram_icon,
   ham_facebook_icon,
   ham_youtube_icon,
 } from "../../../assets/resources/icons";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 import { ShopContext } from "../Context/shopContext";
+import { useAuth } from "../../../utils/AuthContext";
 
 const Header = () => {
-
+  const { productId } = useParams();
   const [openSearch, setOpenSearch] = useState(false);
   const location = useLocation();
-  const {getTotalCartItems} = useContext(ShopContext);
-
+  const { getTotalCartItems, addToWishList, wishListItems,getTotalWishList } = useContext(ShopContext);
+  const { logoutUser } = useAuth();
 
   return (
     <>
@@ -96,7 +96,10 @@ const Header = () => {
               </Link>
             </button>
             <button className="border-0 bg-transparent">
-              <Link to="/cart" className="d-flex text-decoration-none">
+              <Link
+                to="/cart/shoppingcart"
+                className="d-flex text-decoration-none"
+              >
                 <img
                   src={cart_icon}
                   alt="account_icon"
@@ -171,10 +174,11 @@ const Header = () => {
                     <div className="vertical_line d-md-none d-sm-block border-1 border-bottom"></div>
                     <li className="nav-item">
                       <Link
-                       to="/productPage"
+                        to="/product"
                         aria-current="page"
                         className={`nav-link ${
-                          location.pathname === "/product" ? "active" : "" }`}
+                          location.pathname === "/product" ? "active" : ""
+                        }`}
                       >
                         Product
                       </Link>
@@ -209,17 +213,48 @@ const Header = () => {
                 <div className="d-md-none d-sm-block ">
                   <div className="cart container d-flex justify-content-between align-items-start border-bottom pb-1 pt-1">
                     <span className="h6">Cart</span>
-                    <img src={cart_icon} alt="cart_icon" />
+                    <button className="border-0 bg-transparent">
+                      <Link
+                        to="/cart/shoppingcart"
+                        className="d-flex text-decoration-none"
+                      >
+                        <img
+                          src={cart_icon}
+                          alt="account_icon"
+                          id="sub_header_icons"
+                          className="img-fluid"
+                        />
+                        <div className="cart_count bg-dark rounded-circle text-white fw-medium  text-center d-flex justify-content-center align-items-center">
+                          {getTotalCartItems()}
+                        </div>
+                      </Link>
+                    </button>
                   </div>
                   <div className="wishlist container d-flex justify-content-between align-items-start border-bottom pb-1 pt-1">
                     <span className="h6">wishlist</span>
-                    <img src={wishlist_heart_icon} alt="wishlist" />
+                    <button className="border-0 bg-transparent">
+                      <Link
+                        to="/user/wishlist"
+                        className="d-flex text-decoration-none"
+                      >
+                        <img
+                          src={cart_icon}
+                          alt="account_icon"
+                          id="sub_header_icons"
+                          className="img-fluid"
+                        />
+                        <div className="cart_count bg-dark rounded-circle text-white fw-medium  text-center d-flex justify-content-center align-items-center">
+                       {getTotalWishList()}
+                        </div>
+                      </Link>
+                    </button>
                   </div>
                   <button
                     type="button"
                     className="ham_button btn  btn-dark my-1 mx-3"
+                    onClick={logoutUser}
                   >
-                    Sign in
+                    Logout
                   </button>
                 </div>
                 <div className=" d-md-none d-sm-block ps-2">
@@ -237,4 +272,3 @@ const Header = () => {
 };
 export default Header;
 
-//d-none d-sm-block

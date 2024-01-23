@@ -124,7 +124,7 @@ export const data_product = [
     discount_percent: "50%",
     product_reviews: `${star}`,
     product_title: "Bamboo basket",
-    actual_price: "$9.99",
+    actual_price: "9.99",
   },
   {
     id: 12,

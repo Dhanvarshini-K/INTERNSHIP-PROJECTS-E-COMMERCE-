@@ -1,7 +1,10 @@
 .blog_image{
   background-image: url(../../../assets/images/blog_image.svg);
   background-size: cover;
-  height: 70vh;
+  height: 50vh;
+  .blog_link{
+    padding-top: 80px;
+}
 }
 
 .dropdown{

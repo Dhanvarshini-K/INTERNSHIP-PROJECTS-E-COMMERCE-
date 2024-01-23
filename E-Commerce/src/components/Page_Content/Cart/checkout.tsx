@@ -1,53 +1,17 @@
-import React from "react";
-import CartHeader from "./cart_header";
 import { paycard, ticket_percent } from "../../../assets/resources/icons";
-import { cartItems } from "../../Functionality_Data/Cart_item";
+import OrderSummary from "./order_summary";
+import "../Cart/checkout.scss";
+import { useContext } from "react";
+import { ShopContext } from "../Context/shopContext";
 
 const Checkout = () => {
-  const renderCheckOut = cartItems.map((checkOut) => {
-    return (
-      <section className="d-flex gap-4 justify-content-center border-bottom pb-3">
-        <div className="pt-2">
-          <img src={checkOut.image} alt="cart_image" />
-        </div>
-        <div className="d-flex flex-column pt-2 gap-1">
-          <span className="fw-bold">{checkOut.title}</span>
-          <span>color:{checkOut.color}</span>
-          <button className="quantity_button border border-1 border-dark rounded bg-transparent">
-            <input
-              type="button"
-              value="-"
-              className="button-minus border-0 rounded bg-transparent"
-              data-field="quantity"
-            />
-            <input
-              type="text"
-              step="1"
-              max="10"
-              value="1"
-              name="quantity"
-              className="quantity-field border-0 text-center w-25"
-            />
-            <input
-              type="button"
-              value="+"
-              className="button-minus border-0 rounded bg-transparent"
-              data-field="quantity"
-            />
-          </button>
-        </div>
-        <div className="d-flex align-items-center">
-          <span className="fw-bold">$38.00</span>
-        </div>
-      </section>
-    );
-  });
+  const { getTotalCartAmount,cartItems,productList} = useContext(ShopContext);
+
   return (
     <>
-      <CartHeader />
       <section className="container ">
         <div className="row d-flex gap-md-4 mx-3">
-          <div className="col-12 col-md-5  my-5 d-flex gap-3 flex-column">
+          <div className="col-12 col-md-6  my-5 d-flex gap-3 flex-column">
             <div className="row p-3 border-1 border-secondary border rounded d-flex gap-3">
               <span className="h5 fw-bold">Contact Information</span>
               <form className="d-flex flex-column gap-2">
@@ -198,9 +162,9 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-          <div className="order_summary col-12 col-md-6  py-3 border rounded border-dark my-5 d-flex flex-column gap-2">
+          <div className="order_summary col-12 col-md-5  py-3 border rounded border-dark my-5 d-flex flex-column gap-2">
             <span className="h4 fw-bold"> Order Summary </span>
-            {renderCheckOut}
+            <OrderSummary/>
             <div className="d-flex gap-2">
               <input
                 type="text"
@@ -229,11 +193,11 @@ const Checkout = () => {
             </div>
             <div className="d-flex justify-content-between border-bottom p-2">
               <span>Subtotal</span>
-              <span className="fw-bold">$99.00</span>
+              <span className="fw-bold">$ {`${getTotalCartAmount(cartItems,productList)}`}</span>
             </div>
             <div className="d-flex justify-content-between p-2">
               <span>Total</span>
-              <span className="fw-bold">$234.00</span>
+              <span className="fw-bold">$ {`${getTotalCartAmount(cartItems,productList)}`}</span>
             </div>
           </div>
         </div>

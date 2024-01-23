@@ -2,15 +2,22 @@ import { createContext, ReactNode, useState } from "react";
 import { productList } from "../../Functionality_Data/all_product_card";
 
 interface ShopContextValue {
-  productList: any[]; // Replace 'any' with the actual type of your productList
+  productList: any[];
   cartItems: { [itemId: number]: number };
   wishListItems: { [itemId: number]: boolean };
   addToCart: (itemId: number) => void;
   removeFromCart: (itemId: number) => void;
   addToWishList: (itemId: number) => void;
   removeFromWishList: (itemId: number) => void;
-  getTotalCartItems: { (itemId: number): number };
-  getTotalCartAmount: () => number;
+  getTotalCartItems: () => number;
+  getTotalCartAmount: (
+    cartItems: object,
+    productList: object,
+    shippingCost: number
+  ) => void;
+  getTotalWishList: () => number;
+
+
 }
 
 export const ShopContext = createContext<ShopContextValue>({
@@ -22,7 +29,8 @@ export const ShopContext = createContext<ShopContextValue>({
   addToWishList: () => {},
   removeFromWishList: () => {},
   getTotalCartItems: () => 0,
-  getTotalCartAmount: () => 0,
+  getTotalWishList: () => 0,
+  getTotalCartAmount: () => {}
 });
 
 const getDefaultCart = () => {
@@ -30,6 +38,8 @@ const getDefaultCart = () => {
   for (let index = 0; index < productList.length + 1; index++) {
     cart[index] = 0;
   }
+  console.log(cart);
+
   return cart;
 };
 
@@ -45,7 +55,6 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState(getDefaultCart);
   const [wishListItems, setWishListItems] = useState(getDefaultWishlist);
 
-  console.log(cartItems);
 
   const addToCart = (itemId: number) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
@@ -55,6 +64,7 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
+  
   const addToWishList = (itemId: number) => {
     setWishListItems((prev) => ({ ...prev, [itemId]: true }));
   };
@@ -62,6 +72,7 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
   const removeFromWishList = (itemId: number) => {
     setWishListItems((prev) => ({ ...prev, [itemId]: false }));
   };
+
 
 
   const getTotalCartItems = () => {
@@ -74,25 +85,40 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
     return totalItem;
   };
 
-  const getTotalCartAmount = () =>{
-    let totalAmount = 0;
-    for(const item in cartItems)
-    {
-      if(cartItems[item]>0)
-      {
-        let itemInfo = productList.find((product)=> product.id === Number(item));
-        if (itemInfo && typeof itemInfo.actual_price === 'number' && typeof cartItems[item] === 'number') {
-          totalAmount += itemInfo.actual_price * cartItems[item];
-        }
-        
+  const getTotalWishList = () => {
+    let totalItems = 0;
+    for (const itemId in wishListItems) {
+      if (wishListItems[itemId]) {
+        totalItems += 1;
       }
-      return totalAmount;
     }
-  }
+    return totalItems;
+  };
 
+  const getTotalCartAmount = (cartItems, productList, shippingCost) => {
+    let totalAmount = 0;
 
+    for (const itemId in cartItems) {
+      if (cartItems[itemId] > 0) {
+        const quantity = cartItems[itemId];
+        console.log(cartItems);
+
+        const itemInfo = productList.find(
+          (product) => product.id === Number(itemId)
+        );
+
+        if (itemInfo) {
+          totalAmount += Number(itemInfo.actual_price) * Number(quantity);
+          console.log(Number(quantity));
+        }
+      }
+    }
+
+    return totalAmount + shippingCost;
+  };
 
   const contextValue = {
+    getTotalCartAmount,
     productList,
     cartItems,
     wishListItems,
@@ -101,7 +127,8 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
     addToWishList,
     removeFromWishList,
     getTotalCartItems,
-    getTotalCartAmount
+    getTotalWishList
+ 
   };
 
   return (

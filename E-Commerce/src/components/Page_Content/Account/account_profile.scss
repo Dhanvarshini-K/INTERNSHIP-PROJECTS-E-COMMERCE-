@@ -3,12 +3,25 @@
 .account_profile {
     background-color: $light;
 }
-// .horizontal_line {
-//     background-color: $black;
-//     width:300px;
-//     border-bottom: 1px solid $black;
-// }
+
 .links.active{
     border-bottom: 1px solid $black;
     width: 300px;
 }
+.dropdown {
+    width: 200px;
+    position: relative;
+    .dropdown-btn {
+      box-shadow: 1px solid grey;
+    }
+  
+    .dropdown-content {
+      width: 100%;
+      box-shadow: 2px 2px $dark_grey;
+      z-index: 2;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: $white;
+    }
+  }

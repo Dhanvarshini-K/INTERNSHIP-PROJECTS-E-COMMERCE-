@@ -32,7 +32,6 @@ const SaleUpMain = () => {
     });
   return (
     <React.Fragment>
-      <h1>hello</h1>
       <div>{renderSaleUp}</div>
     </React.Fragment>
   );

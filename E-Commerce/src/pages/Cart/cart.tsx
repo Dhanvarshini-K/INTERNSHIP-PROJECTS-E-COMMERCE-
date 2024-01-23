@@ -1,15 +1,23 @@
+import { useParams } from "react-router-dom";
 import CartHeader from "../../components/Page_Content/Cart/cart_header";
+import Checkout from "../../components/Page_Content/Cart/checkout";
 import ShoppingCart from "../../components/Page_Content/Cart/shopping_cart";
+import "../../pages/Cart/cart.scss";
 
-// import CartMain from "../../components/Page_Content/Cart/shopping_cart";
 const CartPage = () => {
-  return (
-    <div>
+  const { currentpage } = useParams();
 
-      {/* <CartMain /> */}
-      <CartHeader/>
-      <ShoppingCart/>
-    </div>
+  return (
+ 
+    <section className="cart_container">
+      <div>
+        <CartHeader currentpage = {currentpage} />
+      </div>
+      <div>
+        {currentpage === "shoppingcart" && <ShoppingCart />}
+        {currentpage === "checkout" && <Checkout />}
+      </div>
+  </section>
   );
 };
 

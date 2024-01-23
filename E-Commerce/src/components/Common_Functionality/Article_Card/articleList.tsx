@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { articleItem } from "../../Functionality_Data/article_card";
 
 interface Props {
@@ -5,6 +6,10 @@ interface Props {
   addArticle: Boolean;
 }
 const ArticleList = ({ view, addArticle }: Props) => {
+  const navigate = useNavigate();
+  const handleArticlePage = (title: string, image: string) => {
+    navigate("/article", { state: [title, image] });
+  };
   const renderBlog = articleItem.map((article) => {
     return (
       <div className={`col article container d-flex flex-column gap-3`}>
@@ -12,6 +17,7 @@ const ArticleList = ({ view, addArticle }: Props) => {
           src={article.image}
           alt="home"
           className="img-fluid article_image  mx-auto d-block"
+          onClick={() => handleArticlePage(article.title, article.image)}
         />
         <div className="container d-flex flex-column align-items-center text-center ">
           <span className="h6 fw-bold">{article.title} </span>

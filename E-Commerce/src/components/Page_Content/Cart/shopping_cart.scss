@@ -1,3 +1,4 @@
+@import "../../Scss/main.scss";
 
 .shopping_cart_image{
     width: 130px;
@@ -10,3 +11,10 @@ input[type='radio']{
     width: 20px;
     height: 20px;
    }
+
+.apply_coupon{
+    width: 380px;
+}
+.coupon_inpt{
+    outline: none;
+}
