@@ -6,24 +6,33 @@ import { Link } from "react-router-dom";
 import AddToCartItems from "../../Common_Functionality/Add_To_Cart_Items/add_to_cart_items";
 
 const ShoppingCart = () => {
-  const { getTotalCartAmount, cartItems, productList } =
-    useContext(ShopContext);
+  const {
+    getTotalCartAmount,
+    cartItems,
+    productList,
+    applyCoupon,
+    couponMessage,
+  } = useContext(ShopContext);
 
   const [selectedShippingCost, setSelectedShippingCost] = useState(0);
+  const[getCoupon,setGetCoupon] = useState('');
 
   const handleShippingOptionChange = (shippingCost: number) => {
     setSelectedShippingCost(shippingCost);
   };
+  // const handleApplyCoupon = () => {
+  //   applyCoupon(getCoupon);
+  // };
   return (
     <>
-      <section className="mt-5 px-4">
+      <section className="container mt-5 px-4">
         <div className="row d-flex g-1 d-flex gap-4  justify-content-between">
-          <table className="col-12  col-md-3">
+          <table className="col">
             <tr className="border-bottom border-dark">
               <th className="h5 fw-bold">Product</th>
-                <th className="h5 fw-bold">Quantity</th>
-                <th className="h5 fw-bold">Price</th>
-                <th className="h5 fw-bold">Subtotal</th>
+              <th className="h5 fw-bold d-none d-md-block">Quantity</th>
+              <th className="h5 fw-bold d-none d-md-block">Price</th>
+              <th className="h5 fw-bold d-none d-md-block">Subtotal</th>
             </tr>
             <AddToCartItems />
 
@@ -38,16 +47,21 @@ const ShoppingCart = () => {
                   <input
                     className="coupon_inpt text-secondary h5 border-0  "
                     placeholder="Coupon Code"
+                    // value={couponCode}
+                    onChange={(e)=>setGetCoupon(e.target.value)}
                   />
                 </div>
-                <button className="h5 fw-bold border-0 bg-transparent">
-                  Apply
-                </button>
+                <div>
+                  <button className="border-0 bg-transparent h5 fw-bold"  onClick={()=>applyCoupon(getCoupon)}>
+                    Apply
+                  </button>
+                </div>
               </div>
+              {couponMessage && <p>{couponMessage}</p>}
             </div>
           </table>
 
-          <div className="col-12 col-md-5 border border-dark rounded mt-4 py-4 d-flex  gap-3 p-2  flex-column">
+          <div className="col  border border-dark rounded mt-4 py-4 d-flex  gap-3 p-2  flex-column">
             <span className="h4 fw-bold">Cart Summary</span>
             <div className="border border-dark d-flex justify-content-between align-items-center p-2">
               <div className="d-flex gap-2 align-items-start">
@@ -85,7 +99,6 @@ const ShoppingCart = () => {
 
             <div className="border-bottom d-flex justify-content-between">
               <span className="h5">Subtotal </span>
-              {/* <span className="h5">${getTotalCartAmount}</span> */}
               <span className="h5">
                 ${" "}
                 {`${getTotalCartAmount(
@@ -119,9 +132,5 @@ const ShoppingCart = () => {
 };
 
 export default ShoppingCart;
-
-// col-md-5 col-lg-4
-//col-md-4 col-lg-6
-
 
 

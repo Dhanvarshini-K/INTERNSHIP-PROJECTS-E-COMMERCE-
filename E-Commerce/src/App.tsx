@@ -14,13 +14,10 @@ import { AuthProvider } from "./utils/AuthContext";
 import ShopCategory from "./components/Page_Content/ShopCategory/shop_category";
 import ShopPage from "./pages/Shop/shop";
 import Checkout from "./components/Page_Content/Cart/checkout";
-import Product from "./components/Page_Content/Product/product";
 import ArticleDetails from "./components/Page_Content/Article_Card/article_page";
-
 function App() {
   return (
     <>
-      {/* <Router> */}
       <AuthProvider>
         <Routes>
           <Route index element={<SignIn />} />
@@ -71,7 +68,6 @@ function App() {
           </Route>
         </Routes>
       </AuthProvider>
-      {/* </Router> */}
     </>
   );
 }

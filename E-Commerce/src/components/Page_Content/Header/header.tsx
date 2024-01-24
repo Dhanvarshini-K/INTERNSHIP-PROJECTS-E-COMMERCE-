@@ -172,17 +172,6 @@ const Header = () => {
                       </Link>
                     </li>
                     <div className="vertical_line d-md-none d-sm-block border-1 border-bottom"></div>
-                    <li className="nav-item">
-                      <Link
-                        to="/product"
-                        aria-current="page"
-                        className={`nav-link ${
-                          location.pathname === "/product" ? "active" : ""
-                        }`}
-                      >
-                        Product
-                      </Link>
-                    </li>
                     <div className="vertical_line d-md-none d-sm-block border-1 border-bottom"></div>
                     <li className="nav-item">
                       <Link

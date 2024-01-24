@@ -6,8 +6,7 @@ import { ShopContext } from "../../Page_Content/Context/shopContext";
 const Item = (props: any) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const[likeWishList,setLikeWishList] = useState(false);
-  const {addToCart} = useContext(ShopContext);
-  const {addToWishList,addToWishListByNumber} = useContext (ShopContext);
+  const {addToWishList,addToCart} = useContext (ShopContext);
 
   return (
     <>

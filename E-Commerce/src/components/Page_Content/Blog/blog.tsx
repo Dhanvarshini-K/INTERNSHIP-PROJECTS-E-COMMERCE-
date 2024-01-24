@@ -14,6 +14,9 @@ import { Link } from "react-router-dom";
 
 const BlogMain = () => {
   const [showMore, setShowMore] = useState<Boolean>(false);
+  const [isActive, setIsActive] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All Blog");
+
   const viewReducer = (state: any, action: any) => {
     switch (action.type) {
       case "THREE":
@@ -32,15 +35,24 @@ const BlogMain = () => {
 
   return (
     <>
-    <div className="blog_image">
+      <div className="blog_image">
         <div className="carousel-item active d-flex flex-column gap-3 ">
           <div className="blog_link d-flex justify-content-center gap-3 align-items-baseline">
-            <Link to="/home"  className="text-decoration-none text-dark h5 ">Home</Link>
+            <Link to="/home" className="text-decoration-none text-dark h5 ">
+              Home
+            </Link>
             <img src={chevron_right_icon} alt="chevron_right_icon" />
-            <Link to="/blog"  className="text-decoration-none text-dark h5 fw-bold">Blog</Link>
+            <Link
+              to="/blog"
+              className="text-decoration-none text-dark h5 fw-bold"
+            >
+              Blog
+            </Link>
           </div>
           <span className="h1 fw-bold text-center">Our Blog</span>
-          <span className="h4 text-center">Home ideas and design inspiration</span>
+          <span className="h4 text-center">
+            Home ideas and design inspiration
+          </span>
         </div>
       </div>
 
@@ -90,33 +102,30 @@ const BlogMain = () => {
             </button>
           </div>
         </div>
-        <div className="dropdown d-sm-block d-md-none">
-          <button
-            className="fw-bold btn border-2 border-dark w-100 dropdown-toggle d-flex justify-content-between align-items-center"
-            type="button"
-            id="dropdownMenuButton1"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+        <div className="dropdown d-flex gap-2 flex-column d-md-none d-sm-block">
+          <div
+            className="dropdown-btn border border-dark rounded d-flex justify-content-between p-1 ps-2"
+            onClick={() => setIsActive(!isActive)}
           >
-            All Blogs
-          </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li>
-              <a className="dropdown-item" href="#">
-                Action
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </li>
-          </ul>
+            <span className="h5">{selectedCategory}</span>
+            <img src={down_arrow} alt="down_arrow" />
+          </div>
+          {isActive && (
+            <div className="dropdown-content border border-dark  d-flex flex-column gap-2 rounded p-2">
+              <div className="dropdown-item text-center h5">
+                <Link
+                  to="#"
+                  className="text-decoration-none  text-secondary"
+                  onClick={() => {
+                    setIsActive(false);
+                    setSelectedCategory("Featured");
+                  }}
+                >
+                  Featured
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

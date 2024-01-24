@@ -1,6 +1,8 @@
 import React, { useContext, useReducer, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { ShopContext } from "../Context/shopContext";
 import "../../Page_Content/ShopCategory/shop_category.scss";
+import { setPriceFilter } from "../ShopRedux/action";
 import {
   filter_icon,
   down_arrow,
@@ -13,7 +15,23 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import Item from "../../Common_Functionality/ProductItems/product_item";
 
+interface RootState {
+  priceFilter: {
+    minPrice: number;
+    maxPrice: number;
+  };
+}
 const ShopCategory = (props: { category: string }) => {
+
+
+  const shopDispatch = useDispatch();
+  const { priceFilter } = useSelector((state: RootState) => state);
+  const { minPrice = 0, maxPrice = 0 } = priceFilter || {};
+
+  const handleCheckboxChange = (min: number, max: number) => {
+    shopDispatch(setPriceFilter(min, max));
+  };
+
   const shopReducer = (state: any, action: any) => {
     switch (action.type) {
       case "THREE":
@@ -43,8 +61,8 @@ const ShopCategory = (props: { category: string }) => {
   const [shopView, dispatch] = useReducer(shopReducer, "row-cols-md-3");
   const [editFilter, setEditFilter] = useState(true);
   const [isActive, setIsActive] = useState(false);
-  const [isActivePrice, setIsActivePrice] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Category");
+  const [isActivePrice, setIsActivePrice] = useState(false);
   const [selectPrice, setSelectPrice] = useState("All price");
   const [gridHeading, dispatchGridHeading] = useReducer(
     gridHeadingReducer,
@@ -57,12 +75,16 @@ const ShopCategory = (props: { category: string }) => {
   const { productList } = useContext(ShopContext);
   const { category } = props;
 
- 
-
   const renderProduct = productList.map((item: any, index: any) => {
-    if (!category || category === item.category) {
+    if (
+      (!category || category === item.category) &&
+      (!minPrice || item.actual_price >= minPrice) &&
+      (!maxPrice || item.actual_price <= maxPrice)
+    ) {
       console.log("category:", category);
       console.log("item:", item.category);
+      console.log("minPrice:", minPrice);
+      console.log("maxPrice:", maxPrice);
       return (
         <Item
           key={index}
@@ -186,21 +208,21 @@ const ShopCategory = (props: { category: string }) => {
                       <input
                         className="form-check-input "
                         type="checkbox"
-                        id="inlineCheckbox1"
-                        value="option1"
-                
+                        // checked={minPrice === 0 && maxPrice === 0}
+                        onChange={() => handleCheckboxChange(0, 0)}
                       />
+                      
                     </label>
                   </div>
-                  <div className="form-check-inline d-flex justify-content-between">
-                    <label className="form-check-label fw-medium">
-                      $100.00 - 199.99
-                    </label>
+                  <div className="form-check-inline">
+                    <label className="form-check-label fw-medium  d-flex justify-content-between">
+                      $0.00 - 99.99
                       <input
                         type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
+                        className="form-check-input "
+                        onChange={() => handleCheckboxChange(0, 99.99)}
                       />
+                    </label>
                   </div>
                   <div className="form-check-inline d-flex justify-content-between">
                     <label className="form-check-label fw-medium">
@@ -211,6 +233,7 @@ const ShopCategory = (props: { category: string }) => {
                       type="checkbox"
                       id="inlineCheckbox2"
                       value="option2"
+                      onChange={() => handleCheckboxChange(100, 199.99)}
                     />
                   </div>
                   <div className="form-check-inline d-flex justify-content-between">
@@ -222,6 +245,7 @@ const ShopCategory = (props: { category: string }) => {
                       type="checkbox"
                       id="inlineCheckbox3"
                       value="option3"
+                      onChange={() => handleCheckboxChange(200, 299.99)}
                     />
                   </div>
                   <div className="form-check-inline d-flex justify-content-between">
@@ -233,17 +257,19 @@ const ShopCategory = (props: { category: string }) => {
                       type="checkbox"
                       id="inlineCheckbox3"
                       value="option3"
+                      onChange={() => handleCheckboxChange(300, 399.99)}
                     />
                   </div>
                   <div className="form-check-inline d-flex justify-content-between">
                     <label className="form-check-label fw-medium">
-                      $400.00+
+                      $400.00-$500.00
                     </label>
                     <input
                       className="form-check-input custom-control-input"
                       type="checkbox"
                       id="inlineCheckbox3"
                       value="option3"
+                      onChange={() => handleCheckboxChange(400, 500)}
                     />
                   </div>
                 </div>

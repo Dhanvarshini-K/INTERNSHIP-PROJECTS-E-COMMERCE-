@@ -1,8 +1,9 @@
 import { paycard, ticket_percent } from "../../../assets/resources/icons";
-import OrderSummary from "./order_summary";
+import OrderSummary from "../../Common_Functionality/Order_Summary/order_summary";
 import "../Cart/checkout.scss";
 import { useContext } from "react";
 import { ShopContext } from "../Context/shopContext";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const { getTotalCartAmount,cartItems,productList} = useContext(ShopContext);
@@ -161,6 +162,9 @@ const Checkout = () => {
                 </div>
               </div>
             </div>
+            <Link to="/cart/ordercomplete">
+            <button className="border-0 bg-dark text-white rounded p-2 h5 w-100">Place Order</button>
+            </Link>
           </div>
           <div className="order_summary col-12 col-md-5  py-3 border rounded border-dark my-5 d-flex flex-column gap-2">
             <span className="h4 fw-bold"> Order Summary </span>
@@ -193,11 +197,11 @@ const Checkout = () => {
             </div>
             <div className="d-flex justify-content-between border-bottom p-2">
               <span>Subtotal</span>
-              <span className="fw-bold">$ {`${getTotalCartAmount(cartItems,productList)}`}</span>
+              <span className="fw-bold">$ {`${getTotalCartAmount(cartItems,productList,0)}`}</span>
             </div>
             <div className="d-flex justify-content-between p-2">
               <span>Total</span>
-              <span className="fw-bold">$ {`${getTotalCartAmount(cartItems,productList)}`}</span>
+              <span className="fw-bold">$ {`${getTotalCartAmount(cartItems,productList,0)}`}</span>
             </div>
           </div>
         </div>
