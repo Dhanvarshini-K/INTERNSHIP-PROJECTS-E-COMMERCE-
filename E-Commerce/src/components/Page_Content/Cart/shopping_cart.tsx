@@ -1,28 +1,30 @@
 import React, { useContext, useReducer, useState } from "react";
-import { ShopContext, subtotal } from "../Context/shopContext";
+import { ShopContext } from "../Context/shopContext";
 import { remove, ticket_percent_light } from "../../../assets/resources/icons";
 import "../../Page_Content/Cart/shopping_cart.scss";
 import { Link } from "react-router-dom";
 import AddToCartItems from "../../Common_Functionality/Add_To_Cart_Items/add_to_cart_items";
 
+
 const ShoppingCart = () => {
+
   const {
     getTotalCartAmount,
     cartItems,
     productList,
     applyCoupon,
-    couponMessage,
+    removeFromCart,
   } = useContext(ShopContext);
 
   const [selectedShippingCost, setSelectedShippingCost] = useState(0);
-  const[getCoupon,setGetCoupon] = useState('');
+  const [getCoupon, setGetCoupon] = useState("");
 
   const handleShippingOptionChange = (shippingCost: number) => {
     setSelectedShippingCost(shippingCost);
   };
-  // const handleApplyCoupon = () => {
-  //   applyCoupon(getCoupon);
-  // };
+  const handleApplyCoupon = () => {
+    applyCoupon(getCoupon);
+  };
   return (
     <>
       <section className="container mt-5 px-4">
@@ -30,11 +32,12 @@ const ShoppingCart = () => {
           <table className="col">
             <tr className="border-bottom border-dark">
               <th className="h5 fw-bold">Product</th>
-              <th className="h5 fw-bold d-none d-md-block">Quantity</th>
-              <th className="h5 fw-bold d-none d-md-block">Price</th>
-              <th className="h5 fw-bold d-none d-md-block">Subtotal</th>
+              <th className="h5 fw-bold ">Quantity</th>
+              <th className="h5 fw-bold">Price</th>
+              <th className="h5 fw-bold">Subtotal</th>
             </tr>
             <AddToCartItems />
+          
 
             <div className="d-flex flex-column gap-2 pt-5">
               <span className="h5 fw-bold">Have a Coupon?</span>
@@ -45,23 +48,25 @@ const ShoppingCart = () => {
                 <div className="d-flex gap-2 align-items-start">
                   <img src={ticket_percent_light} alt="ticket_percent_light" />
                   <input
-                    className="coupon_inpt text-secondary h5 border-0  "
+                    className="coupon_input text-secondary h5 border-0  "
                     placeholder="Coupon Code"
                     // value={couponCode}
-                    onChange={(e)=>setGetCoupon(e.target.value)}
+                    onChange={(e) => setGetCoupon(e.target.value)}
                   />
                 </div>
                 <div>
-                  <button className="border-0 bg-transparent h5 fw-bold"  onClick={()=>applyCoupon(getCoupon)}>
+                  <button
+                    className="border-0 bg-transparent h5 fw-bold"
+                    onClick={() => handleApplyCoupon(getCoupon)}
+                  >
                     Apply
                   </button>
                 </div>
               </div>
-              {couponMessage && <p>{couponMessage}</p>}
             </div>
           </table>
 
-          <div className="col  border border-dark rounded mt-4 py-4 d-flex  gap-3 p-2  flex-column">
+          <div className="col cart_summary border border-dark rounded mt-4 py-4 d-flex  gap-3 p-2  flex-column">
             <span className="h4 fw-bold">Cart Summary</span>
             <div className="border border-dark d-flex justify-content-between align-items-center p-2">
               <div className="d-flex gap-2 align-items-start">
@@ -100,7 +105,7 @@ const ShoppingCart = () => {
             <div className="border-bottom d-flex justify-content-between">
               <span className="h5">Subtotal </span>
               <span className="h5">
-                ${" "}
+                $
                 {`${getTotalCartAmount(
                   cartItems,
                   productList,
@@ -120,7 +125,9 @@ const ShoppingCart = () => {
               </span>
             </div>
             <Link to="/cart/checkout">
-              <button className="bg-dark text-white border-0 rounded p-2 w-100">
+              <button
+                className="bg-dark text-white border-0 rounded p-2 w-100"
+              >
                 Checkout
               </button>
             </Link>
@@ -132,5 +139,3 @@ const ShoppingCart = () => {
 };
 
 export default ShoppingCart;
-
-

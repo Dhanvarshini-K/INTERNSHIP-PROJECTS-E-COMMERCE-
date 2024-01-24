@@ -33,7 +33,7 @@ const AddToCartItems = () => {
                   <img
                     src={cart.image}
                     alt="cart_image"
-                    className="shopping_cart_image"
+                    className="shopping_cart_image imd-fluid"
                   />
                 </div>
                 <div className="d-flex flex-column justify-content-center">

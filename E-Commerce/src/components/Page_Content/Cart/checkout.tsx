@@ -10,9 +10,9 @@ const Checkout = () => {
 
   return (
     <>
-      <section className="container ">
+      <section className="checkout_details ">
         <div className="row d-flex gap-md-4 mx-3">
-          <div className="col-12 col-md-6  my-5 d-flex gap-3 flex-column">
+          <div className="col-md-5 col-lg-6 my-5 d-flex gap-3 flex-column">
             <div className="row p-3 border-1 border-secondary border rounded d-flex gap-3">
               <span className="h5 fw-bold">Contact Information</span>
               <form className="d-flex flex-column gap-2">
@@ -166,9 +166,11 @@ const Checkout = () => {
             <button className="border-0 bg-dark text-white rounded p-2 h5 w-100">Place Order</button>
             </Link>
           </div>
-          <div className="order_summary col-12 col-md-5  py-3 border rounded border-dark my-5 d-flex flex-column gap-2">
+          <div className="order_summary col py-3 border rounded border-dark my-5 d-flex flex-column gap-2">
             <span className="h4 fw-bold"> Order Summary </span>
+            
             <OrderSummary/>
+
             <div className="d-flex gap-2">
               <input
                 type="text"

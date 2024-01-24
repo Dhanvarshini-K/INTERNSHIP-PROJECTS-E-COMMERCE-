@@ -1,3 +1,4 @@
+
 import React, { useContext, useReducer } from "react";
 import { ShopContext } from "../../Page_Content/Context/shopContext";
 import "./complete.scss";
@@ -13,7 +14,7 @@ const CompletePage = () => {
 
   return (
     <section>
-      <div className="d-flex row row-cols-sm-4 row-cols-md-5 pt-4 gap-4">
+      <div className="d-flex row row-cols-sm-4 row-cols-md-5 pt-4 gap-5">
         {productList.map((cart) => {
           const quantity = cartItems[cart.id];
           const initialState = { count: quantity };
@@ -35,7 +36,7 @@ const CompletePage = () => {
           if (quantity > 0) {
             return (
               <>
-                <div className="col">
+                <div className="col d-flex gap-3">
                   <div className="complete_product d-flex">
                     <img
                       src={cart.image}

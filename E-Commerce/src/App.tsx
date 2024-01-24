@@ -63,7 +63,7 @@ function App() {
               <Route path="/cart" element={<CartPage />}>
                 <Route path=":currentpage" element={<CartPage />} />
               </Route>
-                <Route path="/article" element={<ArticleDetails />} />
+              <Route path="/article" element={<ArticleDetails />} />
             </Route>
           </Route>
         </Routes>

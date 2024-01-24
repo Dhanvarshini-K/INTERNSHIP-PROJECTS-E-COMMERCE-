@@ -2,7 +2,6 @@ import React, { useContext, useReducer, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ShopContext } from "../Context/shopContext";
 import "../../Page_Content/ShopCategory/shop_category.scss";
-import { setPriceFilter } from "../ShopRedux/action";
 import {
   filter_icon,
   down_arrow,
@@ -14,9 +13,10 @@ import {
 } from "../../../assets/resources/icons";
 import { Link, useLocation } from "react-router-dom";
 import Item from "../../Common_Functionality/ProductItems/product_item";
+import { setPriceFilter } from "../Redux/action";
 
 interface RootState {
-  priceFilter: {
+  PriceFilter: {
     minPrice: number;
     maxPrice: number;
   };
@@ -25,8 +25,9 @@ const ShopCategory = (props: { category: string }) => {
 
 
   const shopDispatch = useDispatch();
-  const { priceFilter } = useSelector((state: RootState) => state);
-  const { minPrice = 0, maxPrice = 0 } = priceFilter || {};
+  const { minPrice, maxPrice } = useSelector((state:RootState) => state.PriceFilter);
+  console.log(minPrice);
+  console.log(maxPrice);
 
   const handleCheckboxChange = (min: number, max: number) => {
     shopDispatch(setPriceFilter(min, max));

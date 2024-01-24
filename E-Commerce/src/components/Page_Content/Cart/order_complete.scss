@@ -8,8 +8,8 @@
     display:flex;
     justify-content: space-between;
 }
-// @media(max-width:405px){
-//     .order_complete{
-//         width: min-content;
-//     }
-// }
+@media(max-width:405px){
+    .order_complete{
+        width: min-content;
+    }
+}

@@ -5,6 +5,9 @@
 .cart_nav_link{
     width: max-content;
 }
+.cart_nav_link.active{
+    border-bottom: 2px solid black;
+}
 @media(max-width:669px){
 .cart_header{
     overflow-x: scroll;

@@ -16,8 +16,8 @@
 //     shippingCost: number
 //   ) => void;
 //   getTotalWishList: () => number;
-//   couponCode: string;
-//   appliedCouponDiscount: number;
+// couponCode: string;
+// appliedCouponDiscount: number;
 //   couponMessage: string;
 //   applyCoupon: () => void;
 // }
@@ -37,7 +37,7 @@
 //   appliedCouponDiscount: 0,
 //   couponMessage: '',
 //   applyCoupon :()=>{}
-  
+
 // });
 
 // const getDefaultCart = () => {
@@ -61,8 +61,8 @@
 // const ShopContextProvider = (props: { children: ReactNode }) => {
 //   const [cartItems, setCartItems] = useState(getDefaultCart);
 //   const [wishListItems, setWishListItems] = useState(getDefaultWishlist);
-//   const [couponCode, setCouponCode] = useState("");
-//   const [appliedCouponDiscount, setAppliedCouponDiscount] = useState(0);
+// const [couponCode, setCouponCode] = useState("");
+// const [appliedCouponDiscount, setAppliedCouponDiscount] = useState(0);
 //   const [couponMessage, setCouponMessage] = useState("");
 
 //   const addToCart = (itemId: number) => {
@@ -109,7 +109,7 @@
 //       setAppliedCouponDiscount(20); // Set the discount amount
 //       setCouponMessage("Coupon applied successfully!");
 //       console.log(appliedCouponDiscount, couponMessage, couponCode);
-//     } 
+//     }
 //     else if (couponCode === "JenkateMW") {
 //       setAppliedCouponDiscount(25); // Set the discount amount
 //       setCouponMessage("Coupon applied successfully!");
@@ -119,7 +119,7 @@
 //       setAppliedCouponDiscount(50); // Set the discount amount
 //       setCouponMessage("Coupon applied successfully!");
 //       console.log(appliedCouponDiscount, couponMessage, couponCode);
-//     }  
+//     }
 //     else {
 //       setAppliedCouponDiscount(0); // Reset the discount if the coupon is invalid
 //       setCouponMessage("Invalid coupon code");
@@ -127,7 +127,6 @@
 //     // setAppliedCouponDiscount(20); // Set the discount amount
 //     return appliedCouponDiscount;
 //   };
-
 
 //   const getTotalCartAmount = (cartItems, productList, shippingCost) => {
 //     let totalAmount = 0;
@@ -179,8 +178,6 @@
 
 // export default ShopContextProvider;
 
-
-
 import { createContext, ReactNode, useState } from "react";
 import { productList } from "../../Functionality_Data/all_product_card";
 
@@ -199,8 +196,9 @@ interface ShopContextValue {
     shippingCost: number
   ) => void;
   getTotalWishList: () => number;
-
-
+  applyCoupon: () => void;
+  couponCode: string;
+  appliedCouponDiscount: number;
 }
 
 export const ShopContext = createContext<ShopContextValue>({
@@ -213,7 +211,10 @@ export const ShopContext = createContext<ShopContextValue>({
   removeFromWishList: () => {},
   getTotalCartItems: () => 0,
   getTotalWishList: () => 0,
-  getTotalCartAmount: () => {}
+  getTotalCartAmount: () => {},
+  couponCode: "",
+  appliedCouponDiscount: 0,
+  applyCoupon: () => {},
 });
 
 const getDefaultCart = () => {
@@ -237,7 +238,8 @@ const getDefaultWishlist = () => {
 const ShopContextProvider = (props: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState(getDefaultCart);
   const [wishListItems, setWishListItems] = useState(getDefaultWishlist);
-
+  const [couponCode, setCouponCode] = useState("");
+  const [appliedCouponDiscount, setAppliedCouponDiscount] = useState(0);
 
   const addToCart = (itemId: number) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
@@ -247,7 +249,6 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
-  
   const addToWishList = (itemId: number) => {
     setWishListItems((prev) => ({ ...prev, [itemId]: true }));
   };
@@ -255,8 +256,6 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
   const removeFromWishList = (itemId: number) => {
     setWishListItems((prev) => ({ ...prev, [itemId]: false }));
   };
-
-
 
   const getTotalCartItems = () => {
     let totalItem = 0;
@@ -278,6 +277,26 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
     return totalItems;
   };
 
+  const applyCoupon = (couponCodeFromUser: string) => {
+    // Implement your coupon validation logic here
+    // Replace the following line with your actual validation logic
+    setCouponCode(couponCodeFromUser);
+    if (couponCode === "SAVE20") {
+      setAppliedCouponDiscount(20); // Set the discount amount
+      console.log(appliedCouponDiscount, couponCode);
+    } else if (couponCode === "JenkateMW") {
+      setAppliedCouponDiscount(25); // Set the discount amount
+      console.log(appliedCouponDiscount, couponCode);
+    } else if (couponCode === "BALA") {
+      setAppliedCouponDiscount(50); // Set the discount amount
+      console.log(appliedCouponDiscount, couponCode);
+    } else {
+      setAppliedCouponDiscount(0); // Reset the discount if the coupon is invalid
+    }
+    // setAppliedCouponDiscount(20); // Set the discount amount
+    return appliedCouponDiscount;
+  };
+
   const getTotalCartAmount = (cartItems, productList, shippingCost) => {
     let totalAmount = 0;
 
@@ -297,6 +316,9 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
         }
       }
     }
+    if (totalAmount > 100) {
+      totalAmount -= appliedCouponDiscount;
+    }
 
     return totalAmount + shippingCost;
   };
@@ -311,8 +333,8 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
     addToWishList,
     removeFromWishList,
     getTotalCartItems,
-    getTotalWishList
- 
+    getTotalWishList,
+    applyCoupon,
   };
 
   return (

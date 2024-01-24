@@ -91,7 +91,7 @@ const OrderHistory = () => {
                   <span className="h6">{order.price}</span>
                 </td>
               </tr>
-              <div className="d-sm-block d-md-none bOrder-bottom px-4">
+              <div className="d-sm-block d-md-none border-bottom px-4">
               <div className="d-flex justify-content-between">
                 <span className="h6 text-seconday fw-bold">Number ID</span>
                 <span className="h6">{order.number_id}</span>

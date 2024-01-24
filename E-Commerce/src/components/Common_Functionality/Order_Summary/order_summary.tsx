@@ -1,10 +1,11 @@
 import React, { useContext, useReducer } from "react";
 import { ShopContext } from "../../Page_Content/Context/shopContext";
+import { remove } from "../../../assets/resources/icons";
 
 const OrderSummary = () => {
   const { productList, cartItems, removeFromCart } = useContext(ShopContext);
   return (
-    <div>
+    <div className="d-flex flex-column gap-5">
       <>
         {productList.map((cart) => {
           const quantity = cartItems[cart.id];
@@ -26,15 +27,15 @@ const OrderSummary = () => {
 
           if (quantity > 0) {
             return (
-              <section className="d-flex justify-content-between">
+              <section className="d-flex justify-content-between align-items-center">
                   <div className="d-flex gap-2">
                       <img
                         src={cart.image}
                         alt="cart_image"
-                        className="shopping_cart_image"
+                        className="order_summary_image img-fluid"
                       />
                     <div className="d-flex flex-column justify-content-center">
-                      <span className="h5 fw-bold">{cart.product_title}</span>
+                      <span className="fw-bold cart_title">{cart.product_title}</span>
                       <span className="h5">{cart.color}</span>
                       <div>
                         <div className="quantity_button border-1 border-dark border rounded  p-1 d-flex gap-3 ">
@@ -59,8 +60,17 @@ const OrderSummary = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center flex-column">
                     <span className="h5 fw-bold">${cart.actual_price}</span>
+                    <div className="d-flex gap-2 align-items-start d-md-none d-sm-block">
+                    <img
+                      src={remove}
+                      onClick={() => {
+                        removeFromCart(cart.id);
+                      }}
+                      alt="remove_icon"
+                    />
+                  </div>
                   </div>
               </section>
             );

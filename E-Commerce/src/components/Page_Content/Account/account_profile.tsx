@@ -80,6 +80,19 @@ const AccountProfile: React.FC<accountProps> = ({ activepage }) => {
                 Wishlist
               </Link>
             </div>
+            <div className="dropdown-item text-center h5">
+              <Link
+                to="/user/wishlist"
+                className="text-decoration-none  text-secondary"
+                onClick={() => {
+                  logoutUser();
+                  setIsActive(false);
+                  setSelectedCategory("Logout");
+                }}
+              >
+                Logout
+              </Link>
+            </div>
           </div>
         )}
       </div>

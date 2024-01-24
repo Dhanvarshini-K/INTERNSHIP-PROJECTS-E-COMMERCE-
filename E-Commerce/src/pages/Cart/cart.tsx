@@ -7,7 +7,7 @@ import OrderComplete from "../../components/Page_Content/Cart/order_complete";
 
 const CartPage = () => {
   const { currentpage } = useParams();
-
+  
   return (
  
     <section className="cart_container">

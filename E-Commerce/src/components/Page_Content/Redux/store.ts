@@ -1,12 +1,3 @@
-// import { priceFilterReducer } from './reducer';
-// import { combineReducers } from 'redux';
-// const rootReducer = combineReducers({
-//   priceFilter: priceFilterReducer,
-//   // ... (Other reducers)
-// });
-
-
-
 
 //create store-Is used to create the redux store
 //combinereducer-is used to combine multiple reducers into a singe root reducer
@@ -17,12 +8,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { priceFilterReducer } from "./reducer";
 
-const rootReducer = {
+export const rootReducer = {
   PriceFilter : priceFilterReducer,
 };
 
 const store = configureStore({
-  reducer:rootReducer
+  reducer: rootReducer,
 })
 
 export default store;
