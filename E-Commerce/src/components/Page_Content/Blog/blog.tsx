@@ -1,5 +1,5 @@
 import { useReducer, useState } from "react";
-import "../Blog/blog.scss";
+import "../Blog/Blog.scss";
 import {
   chevron_right_icon,
   down_arrow,
@@ -9,7 +9,7 @@ import {
   first_page_fourth_icon,
 } from "../../../assets/resources/icons";
 
-import ArticleList from "../../Common_Functionality/Article_Card/articleList";
+import ArticleList from "../../Common_Functionality/ArticleCard/ArticleList";
 import { Link } from "react-router-dom";
 
 const BlogMain = () => {

@@ -1,4 +1,4 @@
-import "../Home/home.scss";
+import "../Home/Home.scss";
 import {
   slider_images,
   livingroom_image,

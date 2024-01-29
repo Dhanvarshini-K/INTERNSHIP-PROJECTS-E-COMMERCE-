@@ -1,4 +1,4 @@
-import ShopCategory from "../../components/Page_Content/ShopCategory/shop_category";
+import ShopCategory from "../../components/Page_Content/ShopCategory/ShopCategory";
 const ShopPage = () => {
   return (
     <>

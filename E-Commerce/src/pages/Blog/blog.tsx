@@ -1,4 +1,4 @@
-import BlogMain from "../../components/Page_Content/Blog/blog";
+import BlogMain from "../../components/Page_Content/Blog/Blog";
 const BlogPage = () => {
   return (
     <>

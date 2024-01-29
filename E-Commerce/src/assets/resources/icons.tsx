@@ -35,6 +35,8 @@ export {default as email_icons} from "../icons/email_icon.svg"
 //account Icons
 
 export {default as edit } from "../icons/edit.svg"
+export {default as profile_change} from "../icons/profile_change_icon.svg"
+export {default as user_icon} from "../icons/user_icon.png";
 
 //header Icons
 export {default as ticket_percent} from "../icons/ticket-percent-icon.svg"

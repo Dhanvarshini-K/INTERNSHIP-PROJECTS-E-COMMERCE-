@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, useState } from "react";
-import "../ProductDisplay/productDisplay.scss"
+import "../ProductDisplay/ProductDisplay.scss"
 import {
   chevron_right_icon,
   star,
@@ -12,7 +12,7 @@ import {
   jensen_image,
   nicolas_image,
 } from "../../../assets/resources/images";
-import { ShopContext } from "../Context/shopContext";
+import { ShopContext } from "../Context/ShopContext";
 
 const ProductDisplay = (props) => {
   const [showInfo, setShowInfo] = useState(false);
@@ -91,7 +91,7 @@ const ProductDisplay = (props) => {
               <img src={product.image} alt="red_tray" />
               <img src={product.image} alt="white_tray" />
             </div>
-            <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-baseline justify-content-between flex-wrap flex-sm-wrap flex-md-nowrap">
               <div className="quantity_button border-1 border-dark border rounded  p-1 d-flex gap-3 ">
                 <button
                   className="border-0 bg-transparent"
@@ -146,6 +146,7 @@ const ProductDisplay = (props) => {
               onClick={() => {
                 addToCart(product.id);
               }}
+          
             >
               <span className="h6 text-white">Add to Cart</span>
             </button>

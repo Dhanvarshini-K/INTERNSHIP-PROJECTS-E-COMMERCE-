@@ -1,9 +1,9 @@
-import SignIn from "../../components/Page_Content/Form/sign_in";
+import SignIn from "../../components/Page_Content/Form/SignIN";
 
 const Login = () => {
   return (
     <>
-      <SignIn />
+    <SignIn/>
     </>
   );
 };

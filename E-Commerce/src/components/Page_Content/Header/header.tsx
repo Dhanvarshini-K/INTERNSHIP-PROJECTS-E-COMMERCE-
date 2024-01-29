@@ -1,4 +1,4 @@
-import "../Header/header.scss";
+import "../Header/Header.scss";
 import {
   ticket_percent,
   right_arrow_icon,
@@ -13,7 +13,7 @@ import {
 } from "../../../assets/resources/icons";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useContext, useState } from "react";
-import { ShopContext } from "../Context/shopContext";
+import { ShopContext } from "../Context/ShopContext";
 import { useAuth } from "../../../utils/AuthContext";
 
 const Header = () => {
@@ -201,7 +201,7 @@ const Header = () => {
                 </div>
                 <div className="d-md-none d-sm-block ">
                   <div className="cart container d-flex justify-content-between align-items-start border-bottom pb-1 pt-1">
-                    <span className="h6">Cart</span>
+                    <Link to="/cart/shoppingcart" className="h6 text-decoration-none">Cart</Link>
                     <button className="border-0 bg-transparent">
                       <Link
                         to="/cart/shoppingcart"
@@ -220,7 +220,7 @@ const Header = () => {
                     </button>
                   </div>
                   <div className="wishlist container d-flex justify-content-between align-items-start border-bottom pb-1 pt-1">
-                    <span className="h6">wishlist</span>
+                    <Link to="/user/wishlist" className="h6 text-decoration-none">wishlist</Link>
                     <button className="border-0 bg-transparent">
                       <Link
                         to="/user/wishlist"

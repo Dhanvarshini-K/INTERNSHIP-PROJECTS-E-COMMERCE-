@@ -179,9 +179,13 @@
 // export default ShopContextProvider;
 
 import { createContext, ReactNode, useState } from "react";
-import { productList } from "../../Functionality_Data/all_product_card";
+import { productList } from "../../Functionality_Data/AllProductCard";
+import { productListDocuments } from "../../Functionality_Data/AllProductCardAppwrite";
+import { productListLength } from "../../Functionality_Data/AllProductCardAppwrite";
 
 interface ShopContextValue {
+  productListLength : number,
+  producListDocuments : [],
   productList: any[];
   cartItems: { [itemId: number]: number };
   wishListItems: { [itemId: number]: boolean };
@@ -202,6 +206,8 @@ interface ShopContextValue {
 }
 
 export const ShopContext = createContext<ShopContextValue>({
+  productListLength: 1,
+  producListDocuments:[],
   productList: [],
   cartItems: {},
   wishListItems: {},
@@ -219,7 +225,8 @@ export const ShopContext = createContext<ShopContextValue>({
 
 const getDefaultCart = () => {
   let cart: { [itemId: number]: number } = {};
-  for (let index = 0; index < productList.length + 1; index++) {
+  console.log(productListLength);
+  for (let index = 0; index < 72 + 1; index++) {
     cart[index] = 0;
   }
   console.log(cart);
@@ -229,7 +236,7 @@ const getDefaultCart = () => {
 
 const getDefaultWishlist = () => {
   let wishlist: { [itemId: number]: boolean } = {};
-  for (let index = 0; index < productList.length + 1; index++) {
+  for (let index = 0; index < 72 + 1; index++) {
     wishlist[index] = false;
   }
   return wishlist;
@@ -242,7 +249,7 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
   const [appliedCouponDiscount, setAppliedCouponDiscount] = useState(0);
 
   const addToCart = (itemId: number) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1}));
   };
 
   const removeFromCart = (itemId: number) => {
@@ -297,7 +304,7 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
     return appliedCouponDiscount;
   };
 
-  const getTotalCartAmount = (cartItems, productList, shippingCost) => {
+  const getTotalCartAmount = (cartItems, productListDocuments, shippingCost) => {
     let totalAmount = 0;
 
     for (const itemId in cartItems) {
@@ -305,7 +312,7 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
         const quantity = cartItems[itemId];
         console.log(cartItems);
 
-        const itemInfo = productList.find(
+        const itemInfo = productListDocuments.find(
           (product) => product.id === Number(itemId)
         );
 
@@ -325,6 +332,8 @@ const ShopContextProvider = (props: { children: ReactNode }) => {
 
   const contextValue = {
     getTotalCartAmount,
+    productListDocuments,
+    productListLength,
     productList,
     cartItems,
     wishListItems,

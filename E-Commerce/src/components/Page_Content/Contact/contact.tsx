@@ -1,15 +1,15 @@
-import "../Contact/contact.scss";
+import "../Contact/Contact.scss";
 import {
   chevron_right_icon,
   address_icons,
   email_icons,
   contact_icons,
 } from "../../../assets/resources/icons";
-import AboutUs from "../../Common_Functionality/SaleUp_Card/aboutus";
-import CardItem from "../../Common_Functionality/Service_Card/card";
+import AboutUs from "../../Common_Functionality/SaleUpCard/AboutUs";
+import CardItem from "../../Common_Functionality/ServiceCard/Card";
 import { useRef } from "react";
 import { ID } from "appwrite";
-import { databases } from "../../../appwriteConfig";
+import { databases } from "../../../AppWriteConfig";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
@@ -107,7 +107,7 @@ const Contact = () => {
       <AboutUs />
       <section className="container p-4">
         <span className="h1 d-flex justify-content-center">Contact Us</span>
-        <div className=" card-deck d-flex justify-content-between gap-3 align-self-center align-items-stretch flex-wrap p-4">
+        <div className=" card-deck d-flex justify-content-between gap-3 align-self-center align-items-stretch flex-wrap my-3">
           <div className=" card card-body d-flex align-items-center gap-2 border-0 bg-light">
             <img src={address_icons} alt="address_icon" className="details" />
             <span className="h5 fw-bold">ADDRESS</span>

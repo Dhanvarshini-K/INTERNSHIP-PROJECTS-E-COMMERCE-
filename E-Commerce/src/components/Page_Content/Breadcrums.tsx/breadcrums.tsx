@@ -4,7 +4,7 @@ const BreadCrums = (props: any) => {
   const { product } = props;
   return (
     <div className="container p-3">
-      Home <img src={chevron_right_icon} alt="right_icon" /> Shop <img src={chevron_right_icon} alt="" /> {product.category} <img src={chevron_right_icon} alt="" /> {product.product_title}
+      Home <img src={chevron_right_icon} alt="right_icon" /> Shop <img src={chevron_right_icon} alt="" /> {product.category} <img src={chevron_right_icon} alt="" /> <span className="fw-bold">{product.product_title}</span>
     </div>
   );
 };

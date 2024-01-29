@@ -1,11 +1,11 @@
 import { paycard, ticket_percent } from "../../../assets/resources/icons";
-import OrderSummary from "../../Common_Functionality/Order_Summary/order_summary";
-import "../Cart/checkout.scss";
+import OrderSummary from "../../Common_Functionality/OrderSummary/OrderSummary";
+import "../Cart/CheckOut.scss";
 import { useContext } from "react";
-import { ShopContext } from "../Context/shopContext";
+import { ShopContext } from "../Context/ShopContext";
 import { Link } from "react-router-dom";
 
-const Checkout = () => {
+const CheckOut = () => {
   const { getTotalCartAmount,cartItems,productList} = useContext(ShopContext);
 
   return (
@@ -212,4 +212,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default CheckOut;

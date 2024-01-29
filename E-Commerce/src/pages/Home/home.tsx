@@ -1,9 +1,9 @@
-import CardItem from "../../components/Common_Functionality/Service_Card/card";
-import SaleUpMain from "../../components/Common_Functionality/SaleUp_Card/saleup";
-import "../Home/home.scss";
+import CardItem from "../../components/Common_Functionality/ServiceCard/Card";
+import SaleUpMain from "../../components/Common_Functionality/SaleUpCard/SaleUp";
+import "../Home/Home.scss";
+import ArticleMain from "../../components/Page_Content/ArticleCard/Article";
+import HomeProduct from "../../components/Page_Content/HomeProductDisplay/ProductItem";
 import HomePageMain from "../../components/Page_Content/Home/home";
-import ArticleMain from "../../components/Page_Content/Article_Card/article";
-import HomeProduct from "../../components/Page_Content/HomeProductDisplay/product_item";
 
 const HomePage = () => {
   return (

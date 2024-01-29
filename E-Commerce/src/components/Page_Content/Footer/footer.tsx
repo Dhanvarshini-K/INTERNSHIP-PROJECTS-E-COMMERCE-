@@ -1,4 +1,4 @@
-import "../Footer/footer.scss";
+import "../Footer/Footer.scss";
 import { footer_logo_image } from "../../../assets/resources/images";
 import {
   mail_icon,
@@ -6,9 +6,14 @@ import {
   facebook,
   youtube,
 } from "../../../assets/resources/icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Footer = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <>
       <div className="newsletter_container mt-3">
@@ -41,9 +46,6 @@ const Footer = () => {
             </Link>
             <Link className="nav-link" to="/shop">
               Shop
-            </Link>
-            <Link className="nav-link" to="/product">
-              Product
             </Link>
             <Link className="nav-link" to="/blog">
               Blog

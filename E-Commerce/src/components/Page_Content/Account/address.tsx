@@ -1,4 +1,5 @@
 import { edit } from "../../../assets/resources/icons";
+
 const Address = () => {
   return (
     <div>
@@ -13,9 +14,12 @@ const Address = () => {
                 <span className="h6 text-secondary fw-bold">Edit</span>
               </div>
             </div>
-            <span className="h5 fw-medium">Sofia Harvertz</span>
-            <span className="h6">(+1) 234 567 890</span>
-            <span className="h6">345 Long Island, NewYork, United states </span>
+
+            <div className="d-flex flex-column">
+              <span className="h5 fw-medium">Sofia Harvertz</span>
+              <span className="h6">(+1) 234 567 890</span>
+              <span className="h6"> 345 Long Island, NewYork, United states</span>
+            </div>
           </div>
           <div className="border border-1 border-dark rounded  d-flex flex-column gap-2 p-3 ">
             <div className="d-flex justify-content-between">

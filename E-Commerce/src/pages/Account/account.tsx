@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import AccountDetails from "../../components/Page_Content/Account/account_details";
-import Address from "../../components/Page_Content/Account/address";
-import AccountProfile from "../../components/Page_Content/Account/account_profile";
-import OrderHistory from "../../components/Page_Content/Account/order";
-import WishList from "../../components/Page_Content/Account/wishlist";
-import "../../pages/Account/account.scss"
+import AccountDetails from "../../components/Page_Content/Account/AccountDetails";
+import Address from "../../components/Page_Content/Account/Address";
+import AccountProfile from "../../components/Page_Content/Account/AccountProfile";
+import OrderHistory from "../../components/Page_Content/Account/Order";
+import WishList from "../../components/Page_Content/Account/WishList";
+import "../../pages/Account/Account.scss"
 const AccountPage = () => {
   const { activepage } = useParams();
 

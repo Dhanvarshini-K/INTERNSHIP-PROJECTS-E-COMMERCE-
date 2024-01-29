@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { remove } from "../../../assets/resources/icons";
-import "../../Page_Content/Account/wishlist.scss";
-import { ShopContext } from "../Context/shopContext";
+import "../../Page_Content/Account/WishList.scss";
+import { ShopContext } from "../Context/ShopContext";
 
 const WishList = () => {
   const { productList, wishListItems, removeFromWishList,addToCart } =
@@ -34,10 +34,10 @@ const WishList = () => {
                   <span className="h5">{WishList.color}</span>
                   </div>
                 </td>
-                <td>
-                  <span className="h5">{WishList.actual_price}</span>
+                <td className="">
+                  <span className="h5 ">{WishList.actual_price}</span>
                 </td>
-                <td>
+                <td >
                   <button className="border-0 p-2 bg-dark text-white rounded" onClick={()=>addToCart(WishList.id)}>Add to Cart</button>
                 </td>
               </tr>
